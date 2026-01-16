@@ -7,17 +7,13 @@ class Workspaces(Widget.Box):
     def __init__(self):
         self.hyprland = HyprlandService.get_default()
 
-        def connected(_, workspace):
-            workspace.connect("destroyed", lambda _: self.update())
-            self.update()
-
-        self.hyprland.connect("workspace_added", connected)
+        self.hyprland.connect(
+            "notify::workspaces", lambda s, _: self.update(s.workspaces)
+        )
 
         super().__init__(css_classes=["workspaces"], spacing=6)
 
-        self.update()
-
-    def update(self) -> None:
+    def update(self, workspaces) -> None:
         def makebutton(w):
             # noqa: START
             return Widget.Button(
@@ -26,4 +22,4 @@ class Workspaces(Widget.Box):
             )
             # noqa: END
 
-        self.child = [makebutton(w) for w in self.hyprland.workspaces]
+        self.child = [makebutton(w) for w in workspaces]
