@@ -6,10 +6,8 @@ from options import Options
 
 class Clock(Widget.Label):
     def __init__(self):
-        super().__init__()
+        super().__init__(css_classes=["clock"])
         Utils.Poll(1000, lambda x: self.update())
 
     def update(self):
-        self.set_label(
-            datetime.now().strftime(Options.Clock.format)
-        )
+        self.set_label(datetime.now().strftime(Options.Clock.format))

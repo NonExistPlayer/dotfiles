@@ -1,4 +1,6 @@
 import gi
+import os
+from ignis.app import IgnisApp
 from ignis.widgets import Widget
 from widgets.clock import Clock
 from widgets.workspaces import Workspaces
@@ -8,6 +10,9 @@ from gi.repository import Adw  # noqa: E402
 
 
 Adw.init()
+
+app = IgnisApp.get_default()
+app.apply_css(os.path.expanduser("~/.config/ignis/style.scss"))
 
 
 class Bar(Widget.Window):
