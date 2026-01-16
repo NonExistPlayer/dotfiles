@@ -13,7 +13,7 @@ class Workspaces(Widget.Box):
 
         self.hyprland.connect("workspace_added", connected)
 
-        super().__init__(css_classes=["workspaces"])
+        super().__init__(css_classes=["workspaces"], spacing=6)
 
         self.update()
 
