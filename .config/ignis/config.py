@@ -1,6 +1,13 @@
+import gi
 from ignis.widgets import Widget
 from widgets.clock import Clock
 from widgets.workspaces import Workspaces
+
+gi.require_version("Adw", "1")
+from gi.repository import Adw  # noqa: E402
+
+
+Adw.init()
 
 
 class Bar(Widget.Window):
@@ -8,17 +15,9 @@ class Bar(Widget.Window):
         clock = Clock()
         workspaces = Workspaces()
 
-        left = Widget.Box(
-            child=[workspaces]
-        )
-        mid = Widget.Box(
-            halign="center",
-            child=[clock]
-        )
-        right = Widget.Box(
-            halign="end",
-            child=[]
-        )
+        left = Widget.Box(child=[workspaces])
+        mid = Widget.Box(halign="center", child=[clock])
+        right = Widget.Box(halign="end", child=[])
 
         super().__init__(
             namespace="shell-bar",
@@ -27,10 +26,8 @@ class Bar(Widget.Window):
             exclusivity="exclusive",
             height_request=35,
             child=Widget.CenterBox(
-                start_widget=left,
-                center_widget=mid,
-                end_widget=right
-            )
+                start_widget=left, center_widget=mid, end_widget=right
+            ),
         )
 
 
