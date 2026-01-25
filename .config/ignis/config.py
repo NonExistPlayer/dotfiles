@@ -6,6 +6,7 @@ from ignis.widgets import Widget
 from widgets.clock import Clock
 from widgets.workspaces import Workspaces
 from widgets.launcher import Launcher
+from widgets.tray import SystemTray
 
 gi.require_version("Adw", "1")
 from gi.repository import Adw  # noqa: E402
@@ -38,10 +39,11 @@ class Bar(Widget.Window):
         self.clock = Clock()
         self.workspaces = Workspaces()
         self.launcher = Launcher()
+        self.tray = SystemTray()
 
         self.left_widgets = Widget.Box(child=[self.workspaces])
         self.center_widgets = Widget.Stack()
-        self.right_widgets = Widget.Box(halign="end", child=[])
+        self.right_widgets = Widget.Box(halign="end", child=[self.tray])
 
         self.center_widgets.set_transition_type("SLIDE_UP")
         self.center_widgets.set_transition_duration(100)
