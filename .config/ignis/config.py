@@ -40,10 +40,13 @@ class Bar(Widget.Window):
         self.launcher = Launcher()
 
         self.left_widgets = Widget.Box(child=[self.workspaces])
-        self.center_widgets = Widget.Box(halign="center", child=[self.clock])
+        self.center_widgets = Widget.Stack()
         self.right_widgets = Widget.Box(halign="end", child=[])
 
-        self._toggled = False
+        self.center_widgets.set_transition_type("SLIDE_UP")
+        self.center_widgets.set_transition_duration(100)
+        self.center_widgets.add_named(self.clock, "clock")
+        self.center_widgets.add_named(self.launcher, "launcher")
 
         super().__init__(
             namespace="shell-bar",
@@ -62,11 +65,13 @@ class Bar(Widget.Window):
         self.add_controller(key_controller)
 
     def _toggle_launcher(self):
-        if self._toggled:
-            self.center_widgets.child = [self.clock]
-        else:
-            self.center_widgets.child = [self.launcher]
-        self._toggled = not self._toggled
+        visible = self.center_widgets.visible_child_name
+        next = "launcher" if visible == "clock" else "clock"
+        self.center_widgets.set_visible_child_name(next)
+
+        if next == "launcher":
+            self.launcher.grab_focus()
+            self.launcher.set_text("")
 
 
 shell_bar = Bar()
