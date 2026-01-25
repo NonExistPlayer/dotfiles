@@ -7,6 +7,7 @@ from widgets.clock import Clock
 from widgets.workspaces import Workspaces
 from widgets.launcher import Launcher
 from widgets.tray import SystemTray
+from widgets.status import StatusBar
 
 gi.require_version("Adw", "1")
 from gi.repository import Adw  # noqa: E402
@@ -40,10 +41,18 @@ class Bar(Widget.Window):
         self.workspaces = Workspaces()
         self.launcher = Launcher()
         self.tray = SystemTray()
+        self.status = StatusBar()
 
-        self.left_widgets = Widget.Box(child=[self.workspaces])
-        self.center_widgets = Widget.Stack()
-        self.right_widgets = Widget.Box(halign="end", child=[self.tray])
+        self.left_widgets = Widget.Box(
+            css_classes=["left-widgets"], child=[self.workspaces]
+        )
+        self.center_widgets = Widget.Stack(css_classes=["center-widgets"])
+        self.right_widgets = Widget.Box(
+            css_classes=["right-widgets"],
+            halign="end",
+            spacing=15,
+            child=[self.tray, self.status],
+        )
 
         self.center_widgets.set_transition_type("SLIDE_UP")
         self.center_widgets.set_transition_duration(100)

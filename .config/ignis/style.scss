@@ -5,6 +5,15 @@
   }
 }
 
-.system-tray {
+.right-widgets {
   padding: 2.5px;
+}
+
+.status-bar {
+  background-color: var(--accent-bg-color);
+  border-radius: 10px;
+
+  button {
+    background-color: transparent;
+  }
 }
