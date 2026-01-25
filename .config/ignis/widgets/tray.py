@@ -26,9 +26,9 @@ class SystemTray(Widget.Box):
                 ),
             )
             if isinstance(item.icon, str):
-                button.set_icon_name(item.icon)
+                button.set_icon_name(item.bind("icon"))
             elif isinstance(item.icon, GdkPixbuf.Pixbuf):
-                button.set_image(Gtk.Image.new_from_pixbuf(item.icon))
+                button.set_image(Gtk.Image.new_from_pixbuf(item.bind("icon")))
             else:
                 continue
 
