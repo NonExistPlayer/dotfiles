@@ -28,8 +28,15 @@ def handle_key_press(
     keycode: int,
     state: Gdk.ModifierType,
 ) -> None:
-    if keyval == 65515:  # super key
-        shell_bar._toggle_launcher()
+    if shell_bar.center_widgets.visible_child_name == "launcher":
+        if keyval == Gdk.KEY_Escape:
+            shell_bar._toggle_launcher()
+    else:
+        char = chr(keyval)
+        if char.isalpha():
+            shell_bar._toggle_launcher()
+            shell_bar.launcher.text += char
+            shell_bar.launcher.set_position(1)
 
 
 key_controller.connect("key-released", handle_key_press)
@@ -82,6 +89,7 @@ class Bar(Widget.Window):
 
         if next == "launcher":
             self.launcher.grab_focus()
+        else:
             self.launcher.set_text("")
 
 
