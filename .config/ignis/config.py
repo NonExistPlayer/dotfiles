@@ -1,7 +1,8 @@
 import gi
 import os
-from ignis.app import IgnisApp
-from ignis.widgets import Widget
+from ignis import utils
+from ignis.css_manager import CssManager, CssInfoPath
+from ignis.widgets import Window, Box, CenterBox, Stack
 
 from widgets.clock import Clock
 from widgets.workspaces import Workspaces
@@ -16,8 +17,15 @@ from gi.repository import Gtk, Gdk  # noqa: E402
 
 Adw.init()
 
-app = IgnisApp.get_default()
-app.apply_css(os.path.expanduser("~/.config/ignis/style.scss"))
+css_manager = CssManager.get_default()
+
+css_manager.apply_css(
+    CssInfoPath(
+        name="main",
+        path=os.path.expanduser("~/.config/ignis/style.scss"),
+        compiler_function=lambda path: utils.sass_compile(path=path),
+    )
+)
 
 key_controller = Gtk.EventControllerKey()
 
@@ -42,7 +50,7 @@ def handle_key_press(
 key_controller.connect("key-released", handle_key_press)
 
 
-class Bar(Widget.Window):
+class Bar(Window):
     def __init__(self):
         self.clock = Clock()
         self.workspaces = Workspaces()
@@ -50,11 +58,10 @@ class Bar(Widget.Window):
         self.tray = SystemTray()
         self.status = StatusBar()
 
-        self.left_widgets = Widget.Box(
-            css_classes=["left-widgets"], child=[self.workspaces]
-        )
-        self.center_widgets = Widget.Stack(css_classes=["center-widgets"])
-        self.right_widgets = Widget.Box(
+        self.left_widgets = Box(
+            css_classes=["left-widgets"], child=[self.workspaces])
+        self.center_widgets = Stack(css_classes=["center-widgets"])
+        self.right_widgets = Box(
             css_classes=["right-widgets"],
             halign="end",
             spacing=15,
@@ -73,7 +80,7 @@ class Bar(Widget.Window):
             exclusivity="exclusive",
             kb_mode="on_demand",  # for launcher; do not set to 'exclusive'
             height_request=35,
-            child=Widget.CenterBox(
+            child=CenterBox(
                 start_widget=self.left_widgets,
                 center_widget=self.center_widgets,
                 end_widget=self.right_widgets,

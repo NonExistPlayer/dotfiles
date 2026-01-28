@@ -1,9 +1,9 @@
 # Only Hyprland support
-from ignis.widgets import Widget
+from ignis.widgets import Box, Button
 from ignis.services.hyprland import HyprlandService
 
 
-class Workspaces(Widget.Box):
+class Workspaces(Box):
     def __init__(self):
         self.hyprland = HyprlandService.get_default()
 
@@ -16,7 +16,7 @@ class Workspaces(Widget.Box):
     def update(self, workspaces) -> None:
         def makebutton(w):
             # noqa: START
-            return Widget.Button(
+            return Button(
                 label=str(w.id),
                 on_click=lambda x: w.switch_to(),
             )

@@ -1,13 +1,13 @@
 from datetime import datetime
-from ignis.utils import Utils
-from ignis.widgets import Widget
+from ignis import utils
+from ignis.widgets import Label
 from options import Options
 
 
-class Clock(Widget.Label):
+class Clock(Label):
     def __init__(self):
         super().__init__(css_classes=["clock"])
-        Utils.Poll(1000, lambda x: self.update())
+        utils.Poll(1000, lambda x: self.update())
 
     def update(self):
         self.set_label(datetime.now().strftime(Options.Clock.format))

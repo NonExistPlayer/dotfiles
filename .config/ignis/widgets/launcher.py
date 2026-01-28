@@ -1,12 +1,12 @@
 import gi
 import asyncio
-from ignis.utils import Utils
-from ignis.widgets import Widget
+from ignis import utils
+from ignis.widgets import Entry
 
 gi.require_version("Adw", "1")
 
 
-class Launcher(Widget.Entry):
+class Launcher(Entry):
     def __init__(self):
         super().__init__(
             placeholder_text="Type something here...",
@@ -19,4 +19,4 @@ class Launcher(Widget.Entry):
     async def __on_accept(e) -> None:
         text = e.text
         e.set_text("")
-        await Utils.exec_sh_async(text)
+        await utils.exec_sh_async(text)

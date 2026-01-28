@@ -1,10 +1,10 @@
 import asyncio
-from ignis.widgets import Widget
+from ignis.widgets import Box, Button
 from ignis.services.system_tray import SystemTrayService
 from gi.repository import Gtk, GdkPixbuf
 
 
-class SystemTray(Widget.Box):
+class SystemTray(Box):
     def __init__(self):
         self.trayservice = SystemTrayService.get_default()
         self.trayservice.connect(
@@ -18,7 +18,7 @@ class SystemTray(Widget.Box):
 
     def _update_tray(self, items):
         for item in items:
-            button = Widget.Button(
+            button = Button(
                 tooltip_text=item.tooltip,
                 on_click=lambda _: asyncio.create_task(item.activate_async()),
                 on_right_click=lambda _: asyncio.create_task(
