@@ -1,15 +1,27 @@
-from ignis.widgets import Box, Button
+from ignis.widgets import Box, Icon, Button
+from ignis.window_manager import WindowManager
 from ignis.services.network import NetworkService
 
 
-class StatusBar(Box):
+class StatusBar(Button):
     def __init__(self):
         self.netservice = NetworkService.get_default()
+        self.winmanager = WindowManager.get_default()
 
-        super().__init__(css_classes=["status-bar"])
+        box = Box(spacing=15)
 
-        self.append(Button(icon_name=self.netservice.wifi.bind("icon_name")))
+        super().__init__(
+            css_classes=["status-bar"],
+            child=box,
+            on_click=lambda _: self.winmanager.toggle_window(
+                "shell-control-center"),
+        )
+
+        box.append(Icon(image=self.netservice.wifi.bind("icon_name")))
 
         if self.netservice.ethernet.is_connected:
-            self.append(
-                Button(icon_name=self.netservice.ethernet.bind("icon_name")))
+            box.append(
+                Icon(
+                    image=self.netservice.ethernet.bind("icon_name"),
+                )
+            )

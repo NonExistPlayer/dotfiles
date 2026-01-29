@@ -9,14 +9,17 @@ from widgets.workspaces import Workspaces
 from widgets.launcher import Launcher
 from widgets.tray import SystemTray
 from widgets.status import StatusBar
+from widgets.controls import ControlCenter
 
 gi.require_version("Adw", "1")
 from gi.repository import Adw  # noqa: E402
 from gi.repository import Gtk, Gdk  # noqa: E402
 
 
+# Setup Adwaita
 Adw.init()
 
+# Setup css styles
 css_manager = CssManager.get_default()
 
 css_manager.apply_css(
@@ -27,6 +30,7 @@ css_manager.apply_css(
     )
 )
 
+# Setup key bindings
 key_controller = Gtk.EventControllerKey()
 
 
@@ -100,4 +104,6 @@ class Bar(Window):
             self.launcher.set_text("")
 
 
+# Starting
 shell_bar = Bar()
+ControlCenter()
