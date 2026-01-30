@@ -50,9 +50,9 @@ class QuickSettingsButton(Button):
     def enabled(self, value):
         self._enabled = value
         if self._enabled:
-            self.add_css_class("enabled")
+            self.add_css_class("suggested-action")
         else:
-            self.remove_css_class("enabled")
+            self.remove_css_class("suggested-action")
 
     @IgnisProperty
     def subtitle(self):

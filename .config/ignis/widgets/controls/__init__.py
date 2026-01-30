@@ -34,6 +34,10 @@ class ControlCenter(RevealerWindow):
         from config import shell_bar
 
         self.connect(
-            "show", lambda _: shell_bar.status.add_css_class("active"))
+            "show", lambda _: shell_bar.status.add_css_class(
+                "suggested-action")
+        )
         self.connect(
-            "hide", lambda _: shell_bar.status.remove_css_class("active"))
+            "hide", lambda _: shell_bar.status.remove_css_class(
+                "suggested-action")
+        )

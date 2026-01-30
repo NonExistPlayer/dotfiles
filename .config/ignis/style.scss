@@ -11,9 +11,6 @@
 
 .status-bar {
   border-radius: 10px;
-  &.active {
-    background-color: var(--accent-bg-color);
-  }
 }
 
 .control-center {
@@ -28,10 +25,6 @@
 
     .subtitle {
       font-size: 0.8em;
-    }
-
-    &.enabled {
-      background-color: var(--accent-bg-color);
     }
   }
 }
