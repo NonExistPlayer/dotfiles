@@ -7,13 +7,14 @@ from .quicksettings import QuickSettings
 class ControlCenter(RevealerWindow):
     def __init__(self):
         quicksettings = QuickSettings()
+        notifications = Box(vexpand=True)  # todo
         actionbar = ActionBar()
 
         revealer = Revealer(
             transition_type="slide_left",
             child=Box(
                 css_classes=["control-center"],
-                child=[quicksettings, actionbar],
+                child=[quicksettings, notifications, actionbar],
                 spacing=20,
                 vertical=True,
             ),
