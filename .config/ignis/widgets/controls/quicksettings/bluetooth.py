@@ -37,7 +37,7 @@ class BluetoothButton(QuickSettingsButton):
         blueservice.bind_property(
             "powered",  # source property
             self,  # target
-            "enabled",  # target property
+            "active",  # target property
             # flags; two-way binding
             GObject.BindingFlags.BIDIRECTIONAL,
             lambda _, value: value,  # transform to

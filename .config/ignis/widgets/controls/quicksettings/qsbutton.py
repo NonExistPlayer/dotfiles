@@ -1,14 +1,13 @@
-from ignis.widgets import Box, Label, Button
+from ignis.widgets import Box, Label, ToggleButton
 from ignis.gobject import IgnisProperty
 
 from gi.repository import Gtk
 
 
-class QuickSettingsButton(Button):
+class QuickSettingsButton(ToggleButton):
     def __init__(self, title: str, **kwargs):
         self._subtitle = ""
         self._icon_name = ""
-        self._enabled = False
 
         self._subtitle_label = Label(
             css_classes=["subtitle"],
@@ -35,24 +34,10 @@ class QuickSettingsButton(Button):
         super().__init__(css_classes=["pill"], **kwargs)
         self.set_size_request(180, 40)
 
-        self.connect("clicked", lambda _: self.set_enabled(not self.enabled))
-
         hbox.append(self._image)
         hbox.append(vbox)
 
         self.set_child(hbox)
-
-    @IgnisProperty
-    def enabled(self):
-        return self._enabled
-
-    @enabled.setter
-    def enabled(self, value):
-        self._enabled = value
-        if self._enabled:
-            self.add_css_class("suggested-action")
-        else:
-            self.remove_css_class("suggested-action")
 
     @IgnisProperty
     def subtitle(self):

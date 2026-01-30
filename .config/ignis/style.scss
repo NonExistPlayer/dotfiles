@@ -17,6 +17,10 @@
   padding: 10px;
 }
 
+button:checked {
+  background-color: var(--accent-bg-color);
+}
+
 .quick-settings {
   button {
     padding: 8px;

@@ -39,13 +39,13 @@ class WifiButton(QuickSettingsButton):
             "Wi-Fi",
             subtitle=netdevice.ap.bind("ssid"),
             icon_name=netdevice.bind("state", icon_name),
-            enabled=netservice.wifi.enabled,  # fix visual bug
+            active=netservice.wifi.enabled,  # fix visual bug
         )
 
         netservice.wifi.bind_property(
             "enabled",  # source property
             self,  # target
-            "enabled",  # target property
+            "active",  # target property
             # flags; two-way binding
             GObject.BindingFlags.BIDIRECTIONAL,
             lambda _, value: value,  # transform to
