@@ -1,54 +1,3 @@
-.workspaces {
-  padding: 4px;
-  button {
-    padding: 3.8px 8px;
-  }
-}
-
-.right-widgets {
-  padding: 2.5px;
-}
-
-.status-bar {
-  border-radius: 10px;
-}
-
-.control-center {
-  padding: 10px;
-}
-
-.action-bar {
-  button .confirm {
-    animation-name: pulse;
-    animation-duration: 1s;
-    animation-timing-function: ease-in;
-    animation-iteration-count: infinite;
-  }
-
-  .shutdown .confirm {
-    color: var(--destructive-color);
-  }
-  .reboot .confirm {
-    color: var(--success-color);
-  }
-}
-
-button:checked {
-  background-color: var(--accent-bg-color);
-}
-
-.quick-settings {
-  button {
-    padding: 8px;
-    padding-left: 20px;
-    padding-right: 20px;
-
-    .subtitle {
-      font-size: 0.8em;
-    }
-  }
-}
-
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -59,4 +8,56 @@ button:checked {
   100% {
     transform: scale(1);
   }
+}
+
+.workspaces {
+  padding: 4px;
+  button {
+    padding: 3.8px 8px;
+  }
+}
+
+// Status bar
+.right-widgets {
+  padding: 2.5px;
+}
+.status-bar {
+  border-radius: 10px;
+}
+
+.control-center {
+  padding: 10px;
+
+  .quick-settings {
+    button {
+      padding: 8px;
+      padding-left: 20px;
+      padding-right: 20px;
+
+      .subtitle {
+        font-size: 0.8em;
+      }
+    }
+  }
+
+  .action-bar {
+    button .confirm {
+      animation-name: pulse;
+      animation-duration: 1s;
+      animation-timing-function: ease-in;
+      animation-iteration-count: infinite;
+    }
+
+    .shutdown .confirm {
+      color: var(--destructive-color);
+    }
+    .reboot .confirm {
+      color: var(--success-color);
+    }
+  }
+}
+
+// Toggle buttons
+button:checked {
+  background-color: var(--accent-bg-color);
 }
