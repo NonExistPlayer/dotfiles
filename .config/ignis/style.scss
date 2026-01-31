@@ -10,6 +10,10 @@
   }
 }
 
+@keyframes rotate {
+  to { transform: rotate(360deg); }
+}
+
 .workspaces {
   padding: 4px;
   button {
@@ -42,17 +46,19 @@
 
   .action-bar {
     button .confirm {
-      animation-name: pulse;
       animation-duration: 1s;
-      animation-timing-function: ease-in;
       animation-iteration-count: infinite;
     }
 
     .shutdown .confirm {
       color: var(--destructive-color);
+      animation-name: pulse;
+      animation-timing-function: ease-in;
     }
     .reboot .confirm {
       color: var(--success-color);
+      animation-name: rotate;
+      animation-timing-function: ease-in-out;
     }
   }
 }
