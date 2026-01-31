@@ -2,6 +2,8 @@ from ignis import utils
 from ignis.options import options
 from ignis.widgets import Box, CenterBox, Button, ToggleButton
 
+from .cbutton import ConfirmButton
+
 
 class ActionBar(CenterBox):
     def __init__(self):
@@ -12,7 +14,6 @@ class ActionBar(CenterBox):
         )
 
         def dnd_toggled(active):
-            print(active)
             options.notifications.dnd = active
 
         dnd_button = ToggleButton(
@@ -38,16 +39,20 @@ class ActionBar(CenterBox):
             ],
         )
 
-        power_button = Button(
+        power_button = ConfirmButton(
             css_classes=["shutdown", "circular"],
             icon_name="system-shutdown-symbolic",
-            on_click=lambda _: utils.exec_sh("shutdown now"),
+            # on_confirmed=lambda: utils.exec_sh("shutdown now"),
+            on_confirmed=lambda: utils.exec_sh(
+                "hyprctl notify 3 1000 0 SHUTDOWN"),
             tooltip_text="Shutdown",
         )
-        reboot_button = Button(
+        reboot_button = ConfirmButton(
             css_classes=["reboot", "circular"],
             icon_name="system-reboot-symbolic",
-            on_click=lambda _: utils.exec_sh("reboot"),
+            # on_confirmed=lambda: utils.exec_sh("reboot"),
+            on_confirmed=lambda: utils.exec_sh(
+                "hyprctl notify 0 1000 0 REBOOT"),
             tooltip_text="Reboot",
         )
         power_box = Box(

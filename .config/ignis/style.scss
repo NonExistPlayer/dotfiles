@@ -17,6 +17,22 @@
   padding: 10px;
 }
 
+.action-bar {
+  button .confirm {
+    animation-name: pulse;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-iteration-count: infinite;
+  }
+
+  .shutdown .confirm {
+    color: var(--destructive-color);
+  }
+  .reboot .confirm {
+    color: var(--success-color);
+  }
+}
+
 button:checked {
   background-color: var(--accent-bg-color);
 }
@@ -30,5 +46,17 @@ button:checked {
     .subtitle {
       font-size: 0.8em;
     }
+  }
+}
+
+@keyframes pulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.3);
+  }
+  100% {
+    transform: scale(1);
   }
 }
