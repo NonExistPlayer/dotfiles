@@ -42,17 +42,13 @@ class ActionBar(CenterBox):
         power_button = ConfirmButton(
             css_classes=["shutdown", "circular"],
             icon_name="system-shutdown-symbolic",
-            # on_confirmed=lambda: utils.exec_sh("shutdown now"),
-            on_confirmed=lambda: utils.exec_sh(
-                "hyprctl notify 3 1000 0 SHUTDOWN"),
+            on_confirmed=lambda: utils.exec_sh("shutdown now"),
             tooltip_text="Shutdown",
         )
         reboot_button = ConfirmButton(
             css_classes=["reboot", "circular"],
             icon_name="system-reboot-symbolic",
-            # on_confirmed=lambda: utils.exec_sh("reboot"),
-            on_confirmed=lambda: utils.exec_sh(
-                "hyprctl notify 0 1000 0 REBOOT"),
+            on_confirmed=lambda: utils.exec_sh("reboot"),
             tooltip_text="Reboot",
         )
         power_box = Box(

@@ -30,7 +30,6 @@ class ConfirmButton(Button):
 
     @await_confirm.setter
     def await_confirm(self, value):
-        print(value)
         self._await_confirm = value
         if value:
             self.child.add_css_class("confirm")
