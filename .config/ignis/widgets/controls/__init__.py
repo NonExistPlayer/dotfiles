@@ -2,12 +2,13 @@ from ignis.widgets import Box, RevealerWindow, Revealer
 
 from .actionbar import ActionBar
 from .quicksettings import QuickSettings
+from .notifications import Notifications
 
 
 class ControlCenter(RevealerWindow):
     def __init__(self):
         quicksettings = QuickSettings()
-        notifications = Box(vexpand=True)  # todo
+        notifications = Notifications()
         actionbar = ActionBar()
 
         revealer = Revealer(

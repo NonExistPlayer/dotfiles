@@ -44,6 +44,24 @@
     }
   }
 
+  .notifications {
+    .notification {
+      padding: 8px;
+      border-radius: 16px;
+      background-color: var(--sidebar-bg-color);
+
+      .app-box {
+        label { // app name
+          font-size: 0.8em;
+        }
+      }
+
+      .title {
+        font-size: 1.4em;
+      }
+    }
+  }
+
   .action-bar {
     button .confirm {
       animation-duration: 1s;
