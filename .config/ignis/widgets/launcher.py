@@ -1,9 +1,6 @@
-import gi
 import asyncio
 from ignis import utils
 from ignis.widgets import Entry
-
-gi.require_version("Adw", "1")
 
 
 class Launcher(Entry):
