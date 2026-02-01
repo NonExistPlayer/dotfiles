@@ -4,6 +4,8 @@ from ignis.services.hyprland import HyprlandService
 
 
 class Workspaces(Box):
+    __gtype_name__ = "HyprlandWorkspaces"
+
     def __init__(self):
         self.hyprland = HyprlandService.get_default()
 

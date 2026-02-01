@@ -5,6 +5,8 @@ from gi.repository import Gtk, GdkPixbuf
 
 
 class SystemTray(Box):
+    __gtype_name__ = "SystemTray"
+
     def __init__(self):
         self.trayservice = SystemTrayService.get_default()
         self.trayservice.connect(

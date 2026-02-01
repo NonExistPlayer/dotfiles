@@ -6,6 +6,8 @@ from .notifications import Notifications
 
 
 class ControlCenter(RevealerWindow):
+    __gtype_name__ = "ControlCenter"
+
     def __init__(self):
         quicksettings = QuickSettings()
         notifications = Notifications()

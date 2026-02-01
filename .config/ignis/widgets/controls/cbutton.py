@@ -4,6 +4,8 @@ from ignis.gobject import IgnisProperty
 
 
 class ConfirmButton(Button):
+    __gtype_name__ = "ConfirmButton"
+
     def _on_clicked(self, _):
         if self.get_await_confirm():
             self.set_await_confirm(False)

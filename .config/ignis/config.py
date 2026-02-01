@@ -55,6 +55,8 @@ key_controller.connect("key-released", handle_key_press)
 
 
 class Bar(Window):
+    __gtype_name__ = "ShellWindow"
+
     def __init__(self):
         self.clock = Clock()
         self.workspaces = Workspaces()

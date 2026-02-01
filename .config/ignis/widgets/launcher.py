@@ -4,6 +4,8 @@ from ignis.widgets import Entry
 
 
 class Launcher(Entry):
+    __gtype_name__ = "AppLauncher"
+
     def __init__(self):
         super().__init__(
             placeholder_text="Type something here...",

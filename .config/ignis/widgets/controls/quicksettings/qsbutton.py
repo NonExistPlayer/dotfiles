@@ -5,6 +5,8 @@ from gi.repository import Gtk
 
 
 class QuickSettingsButton(ToggleButton):
+    __gtype_name__ = "QuickSettingsButton"
+
     def __init__(self, title: str, **kwargs):
         self._subtitle = ""
         self._icon_name = ""

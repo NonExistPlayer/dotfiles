@@ -5,6 +5,8 @@ from gi.repository import GObject
 
 
 class WifiButton(QuickSettingsButton):
+    __gtype_name__ = "Wi-Fi"
+
     def __init__(self):
         netservice = NetworkService.get_default()
         netdevice = netservice.wifi.devices[0]

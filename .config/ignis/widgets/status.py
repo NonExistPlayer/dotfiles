@@ -4,6 +4,8 @@ from ignis.services.network import NetworkService
 
 
 class StatusBar(Button):
+    __gtype_name__ = "StatusBar"
+
     def __init__(self):
         self.netservice = NetworkService.get_default()
         self.winmanager = WindowManager.get_default()

@@ -7,6 +7,8 @@ from gi.repository import Gtk
 
 
 class Notifications(Scroll):
+    __gtype_name__ = "Notifications"
+
     def __init__(self):
         service = NotificationService.get_default()
 
@@ -26,6 +28,8 @@ class Notifications(Scroll):
 
 
 class NotificationWidget(Box):
+    __gtype_name__ = "Notification"
+
     def _closed(self, _):
         self.unparent()
         self.set_visible(False)

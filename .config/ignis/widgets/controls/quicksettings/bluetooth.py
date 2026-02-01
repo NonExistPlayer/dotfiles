@@ -7,6 +7,8 @@ from gi.repository import GObject
 
 
 class BluetoothButton(QuickSettingsButton):
+    __gtype_name__ = "Bluetooth"
+
     def __init__(self):
         try:
             blueservice = BluetoothService.get_default()

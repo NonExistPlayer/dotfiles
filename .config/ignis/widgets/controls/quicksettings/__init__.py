@@ -5,6 +5,8 @@ from .bluetooth import BluetoothButton
 
 
 class QuickSettings(Grid):
+    __gtype_name__ = "QuickSettings"
+
     def __init__(self):
         wifi = WifiButton()
 

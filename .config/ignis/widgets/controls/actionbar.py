@@ -6,6 +6,8 @@ from .cbutton import ConfirmButton
 
 
 class ActionBar(CenterBox):
+    __gtype_name__ = "ActionBar"
+
     def __init__(self):
         settings_button = Button(  # placeholder
             css_classes=["circular"],
