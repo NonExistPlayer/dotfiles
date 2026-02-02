@@ -1,37 +1,41 @@
 import asyncio
-from ignis.widgets import Box, Button
+from ignis.widgets import Box, Icon, Button
 from ignis.services.system_tray import SystemTrayService
-from gi.repository import Gtk, GdkPixbuf
 
 
 class SystemTray(Box):
     __gtype_name__ = "SystemTray"
 
     def __init__(self):
-        self.trayservice = SystemTrayService.get_default()
-        self.trayservice.connect(
-            "notify::items", lambda s, _: self._update_tray(s.items)
-        )
+        service = SystemTrayService()
+
+        service.connect("added", lambda _, t: self.append(TrayItem(t)))
 
         super().__init__(
             css_classes=["system-tray"],
-            spacing=20,
+            spacing=10,
         )
 
-    def _update_tray(self, items):
-        for item in items:
-            button = Button(
-                tooltip_text=item.tooltip,
-                on_click=lambda _: asyncio.create_task(item.activate_async()),
-                on_right_click=lambda _: asyncio.create_task(
-                    item.secondary_activate_async()
-                ),
-            )
-            if isinstance(item.icon, str):
-                button.set_icon_name(item.bind("icon"))
-            elif isinstance(item.icon, GdkPixbuf.Pixbuf):
-                button.set_image(Gtk.Image.new_from_pixbuf(item.bind("icon")))
-            else:
-                continue
 
-            self.append(button)
+class TrayItem(Button):
+    __gtype_name__ = "SystemTrayItem"
+
+    def _removed(self, _):
+        self.unparent()
+        self.set_visible(False)
+
+    def __init__(self, item):
+        super().__init__(
+            css_classes=["system-tray-item"],
+            tooltip_text=item.tooltip,
+            on_click=lambda _: asyncio.create_task(item.activate_async()),
+            on_right_click=lambda _: item.menu.popup() if item.menu else None,
+            child=Box(
+                child=[
+                    Icon(image=item.bind("icon")),
+                    item.menu,
+                ]
+            ),
+        )
+
+        item.connect("removed", self._removed)
