@@ -1,5 +1,4 @@
-import asyncio
-from ignis import utils
+import subprocess
 from ignis.widgets import Entry
 
 
@@ -12,10 +11,16 @@ class Launcher(Entry):
             width_chars=40,
             xalign=0.5,
             css_classes=["launcher"],
-            on_accept=lambda e: asyncio.create_task(Launcher.__on_accept(e)),
+            on_accept=Launcher._on_accept,
         )
 
-    async def __on_accept(e) -> None:
+    def _on_accept(e) -> None:
         text = e.text
-        e.set_text("")
-        await utils.exec_sh_async(text)
+        from config import shell_bar
+
+        shell_bar._toggle_launcher()
+        subprocess.Popen(
+            text,
+            stdout=subprocess.DEVNULL,
+            stderr=subprocess.DEVNULL,
+        )
