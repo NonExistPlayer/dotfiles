@@ -26,7 +26,7 @@ class TrayItem(Button):
 
     def __init__(self, item):
         super().__init__(
-            css_classes=["system-tray-item"],
+            css_classes=["system-tray-item", "flat"],
             tooltip_text=item.tooltip,
             on_click=lambda _: asyncio.create_task(item.activate_async()),
             on_right_click=lambda _: item.menu.popup() if item.menu else None,
