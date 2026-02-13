@@ -4,6 +4,7 @@ from ignis import utils
 from ignis.css_manager import CssManager, CssInfoPath
 from ignis.widgets import Window, Box, CenterBox, Stack
 
+from options import Options
 from widgets.clock import Clock
 from widgets.workspaces import Workspaces
 from widgets.launcher import Launcher
@@ -66,7 +67,11 @@ class Bar(Window):
 
         self.left_widgets = Box(
             css_classes=["left-widgets"], child=[self.workspaces])
-        self.center_widgets = Stack(css_classes=["center-widgets"])
+        self.center_widgets = Stack(
+            css_classes=["center-widgets"],
+            transition_type=Options.Animations.Launcher.type,
+            transition_duration=Options.Animations.Launcher.duration,
+        )
         self.right_widgets = Box(
             css_classes=["right-widgets"],
             halign="end",
@@ -74,8 +79,6 @@ class Bar(Window):
             child=[self.tray, self.status],
         )
 
-        self.center_widgets.set_transition_type("SLIDE_UP")
-        self.center_widgets.set_transition_duration(100)
         self.center_widgets.add_named(self.clock, "clock")
         self.center_widgets.add_named(self.launcher, "launcher")
 

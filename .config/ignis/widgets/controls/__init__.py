@@ -4,6 +4,8 @@ from .actionbar import ActionBar
 from .quicksettings import QuickSettings
 from .notifications import Notifications
 
+from options import Options
+
 
 class ControlCenter(RevealerWindow):
     __gtype_name__ = "ControlCenter"
@@ -14,7 +16,8 @@ class ControlCenter(RevealerWindow):
         actionbar = ActionBar()
 
         revealer = Revealer(
-            transition_type="slide_left",
+            transition_type=Options.Animations.ControlCenter.type,
+            transition_duration=Options.Animations.ControlCenter.duration,
             child=Box(
                 css_classes=["control-center"],
                 child=[quicksettings, notifications, actionbar],
