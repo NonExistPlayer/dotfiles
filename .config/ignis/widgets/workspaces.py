@@ -12,15 +12,14 @@ class Workspaces(Box):
         _niriserv = NiriService.get_default()
 
         if _hyprserv.is_available:
-            self.service = _hyprserv
+            service = _hyprserv
         elif _niriserv.is_available:
-            self.service = _niriserv
+            service = _niriserv
         else:
             return
 
-        self.service.connect(
-            "notify::workspaces", lambda s, _: self.update(s.workspaces)
-        )
+        service.connect("notify::workspaces", lambda s,
+                        _: self.update(s.workspaces))
 
         super().__init__(css_classes=["workspaces"], spacing=6)
 

@@ -59,27 +59,26 @@ class Bar(Window):
     __gtype_name__ = "ShellWindow"
 
     def __init__(self):
-        self.clock = Clock()
-        self.workspaces = Workspaces()
+        clock = Clock()
+        workspaces = Workspaces()
         self.launcher = Launcher()
-        self.tray = SystemTray()
+        tray = SystemTray()
         self.status = StatusBar()
 
-        self.left_widgets = Box(
-            css_classes=["left-widgets"], child=[self.workspaces])
+        left_widgets = Box(css_classes=["left-widgets"], child=[workspaces])
         self.center_widgets = Stack(
             css_classes=["center-widgets"],
             transition_type=Options.Animations.Launcher.type,
             transition_duration=Options.Animations.Launcher.duration,
         )
-        self.right_widgets = Box(
+        right_widgets = Box(
             css_classes=["right-widgets"],
             halign="end",
             spacing=15,
-            child=[self.tray, self.status],
+            child=[tray, self.status],
         )
 
-        self.center_widgets.add_named(self.clock, "clock")
+        self.center_widgets.add_named(clock, "clock")
         self.center_widgets.add_named(self.launcher, "launcher")
 
         super().__init__(
@@ -90,9 +89,9 @@ class Bar(Window):
             kb_mode="on_demand",  # for launcher; do not set to 'exclusive'
             height_request=35,
             child=CenterBox(
-                start_widget=self.left_widgets,
+                start_widget=left_widgets,
                 center_widget=self.center_widgets,
-                end_widget=self.right_widgets,
+                end_widget=right_widgets,
             ),
         )
 
