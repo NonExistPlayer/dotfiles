@@ -10,6 +10,15 @@ class StatusBar(Button):
         self.netservice = NetworkService.get_default()
         self.winmanager = WindowManager.get_default()
 
+        self.ethernet_icon = Icon(
+            image=self.netservice.ethernet.bind("icon_name"),
+            visible=self.netservice.ethernet.bind("is_connected"),
+        )
+        self.vpn_icon = Icon(
+            image=self.netservice.vpn.bind("icon_name"),
+            visible=self.netservice.vpn.bind("is_connected"),
+        )
+
         box = Box(spacing=15)
 
         super().__init__(
@@ -20,10 +29,5 @@ class StatusBar(Button):
         )
 
         box.append(Icon(image=self.netservice.wifi.bind("icon_name")))
-
-        if self.netservice.ethernet.is_connected:
-            box.append(
-                Icon(
-                    image=self.netservice.ethernet.bind("icon_name"),
-                )
-            )
+        box.append(self.ethernet_icon)
+        box.append(self.vpn_icon)
