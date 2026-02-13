@@ -20,10 +20,6 @@ class SystemTray(Box):
 class TrayItem(Button):
     __gtype_name__ = "SystemTrayItem"
 
-    def _removed(self, _):
-        self.unparent()
-        self.set_visible(False)
-
     def __init__(self, item):
         super().__init__(
             css_classes=["system-tray-item", "flat"],
@@ -38,4 +34,8 @@ class TrayItem(Button):
             ),
         )
 
-        item.connect("removed", self._removed)
+        def removed(_):
+            self.unparent()
+            self.set_visible(False)
+
+        item.connect("removed", removed)

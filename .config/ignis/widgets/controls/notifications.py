@@ -30,10 +30,6 @@ class Notifications(Scroll):
 class NotificationWidget(Box):
     __gtype_name__ = "Notification"
 
-    def _closed(self, _):
-        self.unparent()
-        self.set_visible(False)
-
     def __init__(self, notification: Notification):
         notification = notification
 
@@ -92,4 +88,8 @@ class NotificationWidget(Box):
             ],
         )
 
-        notification.connect("closed", self._closed)
+        def closed(_):
+            self.unparent()
+            self.set_visible(False)
+
+        notification.connect("closed", closed)
