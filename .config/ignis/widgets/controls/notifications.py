@@ -35,20 +35,22 @@ class NotificationWidget(Box):
         self.set_visible(False)
 
     def __init__(self, notification: Notification):
+        self.notification = notification
+
         app_box = Box(css_classes=["app-box"], hexpand=True, spacing=8)
 
         icon = None
         name = Label(
-            label=notification.app_name,
+            label=self.notification.app_name,
             hexpand=True,
             halign="start",
         )
 
-        if notification.icon:
-            if os.path.exists(notification.icon):
-                icon = Gtk.Image.new_from_file(notification.icon)
+        if self.notification.icon:
+            if os.path.exists(self.notification.icon):
+                icon = Gtk.Image.new_from_file(self.notification.icon)
             else:
-                icon = Gtk.Image.new_from_icon_name(notification.icon)
+                icon = Gtk.Image.new_from_icon_name(self.notification.icon)
 
             app_box.append(icon)
 
@@ -56,21 +58,21 @@ class NotificationWidget(Box):
 
         title = Label(
             css_classes=["title"],
-            label=notification.summary,
+            label=self.notification.summary,
             halign="start",
         )
         body = Label(css_classes=["body"],
-                     label=notification.body, halign="start")
+                     label=self.notification.body, halign="start")
         close = Button(
             css_classes=["close", "flat"],
             icon_name="window-close-symbolic",
-            on_click=self._closed,
+            on_click=lambda _: self.notification.close(),
         )
         app_box.append(close)
 
         action_box = Box(hexpand=True, homogeneous=True, spacing=6)
 
-        for action in notification.actions:
+        for action in self.notification.actions:
             action_box.append(
                 Button(
                     css_classes=["action-button"],
@@ -90,4 +92,4 @@ class NotificationWidget(Box):
             ],
         )
 
-        notification.connect("closed", self._closed)
+        self.notification.connect("closed", self._closed)
