@@ -23,4 +23,5 @@ class Launcher(Entry):
             text,
             stdout=subprocess.DEVNULL,
             stderr=subprocess.DEVNULL,
+            start_new_session=True,
         )
