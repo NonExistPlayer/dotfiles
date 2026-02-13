@@ -1,9 +1,5 @@
-import os
-
-from ignis.widgets import Box, Label, Scroll, Button
+from ignis.widgets import Box, Icon, Label, Scroll, Button
 from ignis.services.notifications import Notification, NotificationService
-
-from gi.repository import Gtk
 
 
 class Notifications(Scroll):
@@ -35,7 +31,6 @@ class NotificationWidget(Box):
 
         app_box = Box(css_classes=["app-box"], hexpand=True, spacing=8)
 
-        icon = None
         name = Label(
             label=notification.app_name,
             hexpand=True,
@@ -43,12 +38,7 @@ class NotificationWidget(Box):
         )
 
         if notification.icon:
-            if os.path.exists(notification.icon):
-                icon = Gtk.Image.new_from_file(notification.icon)
-            else:
-                icon = Gtk.Image.new_from_icon_name(notification.icon)
-
-            app_box.append(icon)
+            app_box.append(Icon(image=notification.icon))
 
         app_box.append(name)
 
