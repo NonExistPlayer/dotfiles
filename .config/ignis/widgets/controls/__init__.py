@@ -44,7 +44,11 @@ class ControlCenter(RevealerWindow):
             "show", lambda _: shell_bar.status.add_css_class(
                 "suggested-action")
         )
-        self.connect(
-            "hide", lambda _: shell_bar.status.remove_css_class(
-                "suggested-action")
-        )
+
+        def hide(_):
+            shell_bar.status.remove_css_class("suggested-action")
+            # removing status bar notif icon color
+            # because user saw notifications in control center
+            shell_bar.status.notification_icon.remove_css_class("notified")
+
+        self.connect("hide", hide)

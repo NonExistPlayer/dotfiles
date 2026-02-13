@@ -24,9 +24,27 @@
 // Status bar
 .right-widgets {
   padding: 2.5px;
-}
-.status-bar {
-  border-radius: 10px;
+
+  .status-bar {
+    border-radius: 10px;
+
+    .dnd {
+      color: var(--light-5);
+    }
+
+    .notified {
+      color: var(--orange-2);
+    }
+
+    &.suggested-action {
+      .dnd {
+        color: white;
+      }
+      .notified {
+        color: white;
+      }
+    }
+  }
 }
 
 .control-center {
