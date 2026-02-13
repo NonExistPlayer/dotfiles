@@ -1,15 +1,24 @@
 # Only Hyprland support
 from ignis.widgets import Box, Button
 from ignis.services.hyprland import HyprlandService
+from ignis.services.niri import NiriService
 
 
 class Workspaces(Box):
-    __gtype_name__ = "HyprlandWorkspaces"
+    __gtype_name__ = "Workspaces"
 
     def __init__(self):
-        self.hyprland = HyprlandService.get_default()
+        _hyprserv = HyprlandService.get_default()
+        _niriserv = NiriService.get_default()
 
-        self.hyprland.connect(
+        if _hyprserv.is_available:
+            self.service = _hyprserv
+        elif _niriserv.is_available:
+            self.service = _niriserv
+        else:
+            return
+
+        self.service.connect(
             "notify::workspaces", lambda s, _: self.update(s.workspaces)
         )
 
