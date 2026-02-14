@@ -27,8 +27,6 @@ class NotificationWidget(Box):
     __gtype_name__ = "Notification"
 
     def __init__(self, notification: Notification):
-        notification = notification
-
         app_box = Box(css_classes=["app-box"], hexpand=True, spacing=8)
 
         name = Label(
