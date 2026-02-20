@@ -24,6 +24,15 @@ they are part of the shell. Recommended applications are highlighted in **bold**
 - Kitty<br>
   Cool terminal emulator.
 
+### Other Software
+This is a list of applications that I personally use. Some of this are specified in
+[Hyprland config](../../.config/hypr/hyprland.conf).
+
+- Arch Linux
+- [Zen Browser](https://zen-browser.app/)
+- kitty
+- [hyprpolkitagent](https://github.com/hyprwm/hyprpolkitagent)
+
 ## Required Software
 This is a small list of software/libraries. Required programs are highlighted in **bold**.
 

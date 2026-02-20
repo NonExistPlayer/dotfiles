@@ -24,6 +24,15 @@
 - Kitty<br>
   Крутой эмулятор терминала.
 
+### Другой софт
+Это список приложений, которые лично я использую. Некоторые из них указаны в
+[конфиге Hyprland](../../.config/hypr/hyprland.conf).
+
+- Arch Linux
+- [Zen Browser](https://zen-browser.app/)
+- kitty
+- [hyprpolkitagent](https://github.com/hyprwm/hyprpolkitagent)
+
 ## Требуемый софт
 Это небольшой список из софта/библиотек. Необходимые программы выделены **жирным** шрифтом.
 
