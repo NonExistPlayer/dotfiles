@@ -22,9 +22,10 @@ Huge thanks to [linkfrg](https://github.com/linkfrg) for the [framework](https:/
 
 **Requirements**:
 - **Hyprland** / Niri (not tested)<br>
-  > Technically it's possible to run on any Wayland compositor
+  > It's possible to run on any Wayland compositor
   > (with Layer Shell protocol support), but the
-  > [workspace](./widgets/workspaces.py) widget depends on Hyprland.
+  > [workspace](./widgets/workspaces.py) widget depends on Hyprland / Niri.
+  > In this case, widget will be hidden.
 - **Ignis**<br>
   Currently Ignis is not releasing updates, which means
   for new features you **need** to use the `git` version.
