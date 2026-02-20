@@ -9,11 +9,11 @@
 
 ## Обзор
 
-| Софт     | Документация                                       | Ссылка в репозитории                      |
-| -------- | -------------------------------------------------- | ----------------------------------------- |
-| Hyprland | https://wiki.hypr.land                             | [тык](`../../.config/hypr/hyprland.conf`) |
-| Kitty    | https://sw.kovidgoyal.net/kitty/conf/              | [тык](`../../.config/kitty/kitty.conf`)   |
-| Ignis    | https://ignis-sh.github.io/ignis/latest/index.html | [тык](`../../.config/ignis/`)             |
+| Софт     | Документация                                       | Ссылка в репозитории                    |
+| -------- | -------------------------------------------------- | --------------------------------------- |
+| Hyprland | https://wiki.hypr.land                             | [тык](../../.config/hypr/hyprland.conf) |
+| Kitty    | https://sw.kovidgoyal.net/kitty/conf/              | [тык](../../.config/kitty/kitty.conf)   |
+| Ignis    | https://ignis-sh.github.io/ignis/latest/index.html | [тык](../../.config/ignis/)             |
 
 ### Hyprland
 Hyprland конфиг разделён на конфиги поменьше для большей структуризации и простоты.
