@@ -1,4 +1,10 @@
 <div align="center">
+
+[English](README.md) | **Русский**
+
+</div>
+
+<div align="center">
   <h1>Моя оболочка</h1>
   Здесь творяться чудеса!
 </div>
