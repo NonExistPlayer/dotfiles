@@ -9,17 +9,17 @@
 
 > [!IMPORTANT]
 > Оболочка **не зависит** от других конфигов в этом репозитории.
+> **Кроме:** `../hypr/hyprland/ignis.conf`. Этот файл отвечает,
+> за настройку Hyprland под Ignis (в основном горячие клавиши).
 
 ## Использование
 
 **Требования**:
-- **Hyprland** / Niri (не тестируется)
-
+- **Hyprland** / Niri (не тестируется)<br>
   > Технически возможно запустить на любом Wayland-композиторе
   > (с поддержкой Layer Shell protocol), но виджет
   > [workspace](./widgets/workspaces.py)-ов зависит от Hyprland.
-- **Ignis**
-
+- **Ignis**<br>
   На данный момент Ignis не выпускает обновлений, из-за чего
   для новых возможностей **нужно** использовать `git`-версию.
   
@@ -38,15 +38,12 @@
   ```
   pip install git+https://github.com/ignis-sh/ignis.git
   ```
-- **Компилятор SASS**
-
+- **Компилятор SASS**<br>
   Установите `dart-sass` или `grass-sass`.
   Без него, Ignis будет выдавать ошибку `SassNotFoundError`.
-- **`ignis-gvc`**
-
+- **`ignis-gvc`**<br>
   [`ignis-gvc`](https://github.com/ignis-sh/ignis-gvc) используется для работы со звуком в Ignis.
-- `gnome-bluetooth-3.0` *(опицонально)*
-
+- `gnome-bluetooth-3.0` *(опицонально)*<br>
   Для работы Bluetooth, Ignis использует эту библиотеку.
   Оболочка сможет запуститься, но Bluetooth не будет работать.
 

@@ -28,7 +28,7 @@
   Use `os.path.expanduser("~/.config/ignis/style.scss")`
 - You **can** use a "hardcode" for widgets and/or UI. (e.g.: `Label(label="hardcoded text")`)
 
-**Why:** The hardcode is "tied to a specific machine, which prevents other users from using the shell.
+**Why:** The hardcode is "tied" to a specific machine, which prevents other users from using the shell.
 
 ### Add new settings
 - It is recommended for some widgets options to add configurable settings to the `options.py`. Example:
@@ -128,19 +128,6 @@ def _show_message(self, text: str, time: int = 5000) -> None:
 
 ---
 
-## README Editing/Translating
-- There are only two languages for translating the README: English `README.md` and Russian `README.ru.md` (original).
-- After changing the README, **be sure to indicate at the end of the file** that the *file was modified/translated by AI and checked by the developer*.
-- Add links to the file **if you mention it** using the relative path. (e.g. `[launcher.py](./widgets/launcher.py)`)
-- Also add links if you mention the title in this file.
-- Check that the links are valid.
-- Check that the information is valid.
-- You **can** add emojis to your titles or text.
-- When changing one of the READMEs, remember to change/translate the other.
-
-Use this list as a checklist to check if the README has been modified correctly.
-
----
 
 ## Checklist for Code Changes
 
