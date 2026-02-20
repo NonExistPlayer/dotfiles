@@ -20,6 +20,7 @@ they are part of the shell. Recommended applications are highlighted in **bold**
   Tiling Wayland compositor.
 - **Ignis**<br>
   Framework for creating desktop shells.
+  **Install GIT-version**
 - Kitty<br>
   Cool terminal emulator.
 
@@ -59,6 +60,9 @@ This will create symbolic links in `~/.config`.
 3. Reboot your system or (re)start Hyprland.
 
 4. Enjoy.
+
+> [!TIP]
+> See shell's [README](../../.config/ignis/README.ru.md).
 
 # License
 
