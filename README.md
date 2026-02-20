@@ -62,7 +62,7 @@ This will create symbolic links in `~/.config`.
 4. Enjoy.
 
 > [!TIP]
-> See shell's [README](../../.config/ignis/README.ru.md).
+> See shell's [README](../../.config/ignis/README.md).
 
 # License
 
