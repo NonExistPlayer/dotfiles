@@ -63,6 +63,22 @@ the config has similar comments:
 - **Run `ignis init` directly from the console**, it's useful for viewing logs
 - `ignis inspector` for the **Gtk inspector**
 
+## Commit Naming
+Naming commits happens in this format: `[type] [config]: <description>`
+
+- `[type]`: the commit type (optional)
+    - `fix`: fix
+    - `wip`: Work In Progress
+    - `code`: code refactoring / visual changes
+    - `docs`: documentation editing (`.md` files)
+- `[config]`: where changes happened
+    (optional, if changes are made in the repository root)
+    - `hypr`: Hyprland
+    - `shell`: Ignis shell
+    - `kitty`: Kitty
+    - `...`: ...
+- `<description>`: **required** short commit description
+
 ## Language Requirements
 The following rules apply to all code/configuration:
 
