@@ -1,3 +1,7 @@
 \.git
+^docs$
+
 LICENSE
-README(?:\.ru)?\.md$
+README.md
+CONTRIBUTING.md
+TODO.md
