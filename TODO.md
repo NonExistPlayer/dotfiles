@@ -21,7 +21,6 @@
 ## Ignis
 <!-- AI Instruction: Do not translate code blocks. -->
 
-- Execute commands with arguments in `Launcher`
 - Implement calendar -> `ControlCenter`
 - Add Wi-Fi and Bluetooth connection menu -> `QuickSettings`
 - Add commands to `Launcher`
@@ -32,3 +31,5 @@
 - **System settings**<br>
   Add full system settings to the UI settings.
 - *KDE Connect support*
+
+- ~~Execute commands with arguments in `Launcher`~~ `d62efae`

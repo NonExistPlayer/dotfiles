@@ -21,7 +21,6 @@
 ## Ignis
 <!-- AI Instruction: Do not translate `code blocks`. -->
 
-- Исполнение команд с аргументами `Launcher`
 - Реализовать календарь -> `ControlCenter`
 - Добавить меню подключения Wi-Fi и Bluetooth -> `QuickSettings`
 - Добавить команды в `Launcher`
@@ -32,3 +31,5 @@
 - **Настройки системы**<br>
   Добавить в UI настройках полноценные настройки системы.
 - *Поддержка KDE Connect*
+
+- ~~Исполнение команд с аргументами `Launcher`~~ `d62efae`
