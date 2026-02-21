@@ -9,11 +9,11 @@ Thank you for your interest in the project!
 
 ## Overview
 
-| Software | Documentation                                      | Repository Link                     |
-| -------- | -------------------------------------------------- | ----------------------------------- |
-| Hyprland | https://wiki.hypr.land                             | [link](./config/hypr/hyprland.conf) |
-| Kitty    | https://sw.kovidgoyal.net/kitty/conf/              | [link](./config/kitty/kitty.conf)   |
-| Ignis    | https://ignis-sh.github.io/ignis/latest/index.html | [link](./config/ignis/)             |
+| Software | Documentation                                      | Repository Link                    |
+| -------- | -------------------------------------------------- | ---------------------------------- |
+| Hyprland | https://wiki.hypr.land                             | [link](.config/hypr/hyprland.conf) |
+| Kitty    | https://sw.kovidgoyal.net/kitty/conf/              | [link](.config/kitty/kitty.conf)   |
+| Ignis    | https://ignis-sh.github.io/ignis/latest/index.html | [link](.config/ignis/)             |
 
 ### Hyprland
 The Hyprland config is divided into smaller configs for better structure and simplicity.
