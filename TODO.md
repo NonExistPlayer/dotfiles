@@ -13,7 +13,7 @@
 
 ## Add new software
 
-- [Zellij](https://github.com/zellij-org/zellij) — a cool terminal workspaces
+- ~~[Zellij](https://github.com/zellij-org/zellij) — a cool terminal workspaces~~ `14a972d`
 - [Ranger](https://github.com/ranger/ranger) — an excellent console Vim-inspired file manager
 - Fastfetch — you probably already know :P
 - **Neovim** — a good console code editor, but difficult to customize, I use a ready-made build :/
