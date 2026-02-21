@@ -1,0 +1,28 @@
+//
+// Options
+//
+
+on_force_close "quit"
+copy_on_select false
+advanced_mouse_actions false
+
+//
+// Keybinds
+//
+keybinds {
+    shared_except "locked" {
+        bind "Ctrl f" { ToggleFocusFullscreen; }
+
+        bind "Alt Shift H" "Alt Shift left" { MoveTab "Left"; }
+        bind "Alt Shift L" "Alt Shift right" { MoveTab "Right"; }
+    }
+
+    shared_except "session" "locked" {
+        unbind "Ctrl o" // no conflict with (neo)vim
+        bind "Ctrl v" { SwitchToMode "Session"; }
+    }
+
+    normal {
+        bind "Alt c" { Copy; }
+    }
+}
