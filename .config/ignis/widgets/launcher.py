@@ -22,6 +22,6 @@ class Launcher(Entry):
         subprocess.Popen(
             text,
             stdout=subprocess.DEVNULL,
-            stderr=subprocess.DEVNULL,
+            shell=True,
             start_new_session=True,
         )
