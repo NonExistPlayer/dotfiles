@@ -18,6 +18,10 @@ they are part of the shell. Recommended applications are highlighted in **bold**
 
 - **Hyprland**<br>
   Tiling Wayland compositor.
+  Used in config:
+  - `hyprpolkitagent`
+  - `grim`
+  - `wl-clipboard`
 - **Ignis**<br>
   Framework for creating desktop shells.
   **Install GIT-version**
@@ -25,13 +29,10 @@ they are part of the shell. Recommended applications are highlighted in **bold**
   Cool terminal emulator.
 
 ### Other Software
-This is a list of applications that I personally use. Some of this are specified in
-[Hyprland config](../../.config/hypr/hyprland.conf).
+This is a list of applications that I personally use.
 
 - Arch Linux
 - [Zen Browser](https://zen-browser.app/)
-- kitty
-- [hyprpolkitagent](https://github.com/hyprwm/hyprpolkitagent)
 
 ## Required Software
 This is a small list of software/libraries. Required programs are highlighted in **bold**.
