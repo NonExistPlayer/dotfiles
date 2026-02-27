@@ -21,15 +21,14 @@
 ## Ignis
 <!-- AI Instruction: Do not translate code blocks. -->
 
-- Implement calendar -> `ControlCenter`
 - Add Wi-Fi and Bluetooth connection menu -> `QuickSettings`
 - Add commands to `Launcher`
 - **Implement OSD (On Screen Display)**
 - **Implement UI settings**
-- MPRIS implementation<br>
-  Can be a third element in the `center_widgets` stack in `Bar`.
 - **System settings**<br>
   Add full system settings to the UI settings.
 - *KDE Connect support*
 
+- ~~Implement calendar -> `ControlCenter`~~ `93eb50c`
+- ~~MPRIS implementation~~ `93eb50c`
 - ~~Execute commands with arguments in `Launcher`~~ `d62efae`

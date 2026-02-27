@@ -21,15 +21,14 @@
 ## Ignis
 <!-- AI Instruction: Do not translate `code blocks`. -->
 
-- Реализовать календарь -> `ControlCenter`
 - Добавить меню подключения Wi-Fi и Bluetooth -> `QuickSettings`
 - Добавить команды в `Launcher`
 - **Реализовать OSD (On Screen Display)**
 - **Реализовать UI настройки**
-- Реализация MPRIS<br>
-  Может быть как третий элемент в стеке `center_widgets` в `Bar`.
 - **Настройки системы**<br>
   Добавить в UI настройках полноценные настройки системы.
 - *Поддержка KDE Connect*
 
+- ~~Реализовать календарь -> `ControlCenter`~~ `93eb50c`
+- ~~Реализация MPRIS~~ `93eb50c`
 - ~~Исполнение команд с аргументами `Launcher`~~ `d62efae`
