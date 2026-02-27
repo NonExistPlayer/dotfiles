@@ -23,6 +23,7 @@
 
 - Add Wi-Fi and Bluetooth connection menu -> `QuickSettings`
 - Add commands to `Launcher`
+- Add sound controller to `MediaPanel`
 - **Implement OSD (On Screen Display)**
 - **Implement UI settings**
 - **System settings**<br>
