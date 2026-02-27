@@ -3,6 +3,7 @@ from ignis.widgets import Box, RevealerWindow, Revealer
 from .actionbar import ActionBar
 from .quicksettings import QuickSettings
 from .notifications import Notifications
+from .mediapanel import MediaPanel
 
 from options import Options
 
@@ -13,6 +14,7 @@ class ControlCenter(RevealerWindow):
     def __init__(self):
         quicksettings = QuickSettings()
         notifications = Notifications()
+        mediapanel = MediaPanel()
         actionbar = ActionBar()
 
         revealer = Revealer(
@@ -20,7 +22,7 @@ class ControlCenter(RevealerWindow):
             transition_duration=Options.Animations.ControlCenter.duration,
             child=Box(
                 css_classes=["control-center"],
-                child=[quicksettings, notifications, actionbar],
+                child=[quicksettings, notifications, mediapanel, actionbar],
                 spacing=20,
                 vertical=True,
             ),
