@@ -1,7 +1,7 @@
 from ignis.widgets import Box, Label, Picture, Calendar
 from ignis.services.mpris import MprisService, MprisPlayer
 
-from gi.repository import Gio, Adw
+from gi.repository import GioUnix, Adw
 
 
 class MediaPanel(Box):
@@ -47,7 +47,7 @@ class MediaView(Box):
         super().__init__(child=[switcher, stack], spacing=10)
 
         def add(p: MprisPlayer):
-            desktop = Gio.DesktopAppInfo.new(p.desktop_entry + ".desktop")
+            desktop = GioUnix.DesktopAppInfo.new(p.desktop_entry + ".desktop")
             desktop_icon = desktop.get_icon()
             icon_name = (
                 desktop_icon.get_names()[0]
