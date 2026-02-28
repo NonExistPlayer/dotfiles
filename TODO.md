@@ -24,12 +24,12 @@
 - Add Wi-Fi and Bluetooth connection menu -> `QuickSettings`
 - Add commands to `Launcher`
 - Add sound controller to `MediaPanel`
-- **Implement OSD (On Screen Display)**
 - **Implement UI settings**
 - **System settings**<br>
   Add full system settings to the UI settings.
 - *KDE Connect support*
 
+- ~~**Implement OSD (On Screen Display)**~~ `801d306`
 - ~~Implement calendar -> `ControlCenter`~~ `93eb50c`
 - ~~MPRIS implementation~~ `93eb50c`
 - ~~Execute commands with arguments in `Launcher`~~ `d62efae`
