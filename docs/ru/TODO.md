@@ -21,6 +21,7 @@
 ## Ignis
 <!-- AI Instruction: Do not translate `code blocks`. -->
 
+- Полностью реализовать MPRIS (пауза/плей, перемотка)
 - Добавить меню подключения Wi-Fi и Bluetooth -> `QuickSettings`
 - Добавить команды в `Launcher`
 - Добавить контроллер звука в `MediaPanel`

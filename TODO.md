@@ -21,6 +21,7 @@
 ## Ignis
 <!-- AI Instruction: Do not translate code blocks. -->
 
+- Full MPRIS implementation (pause/play, rewind)
 - Add Wi-Fi and Bluetooth connection menu -> `QuickSettings`
 - Add commands to `Launcher`
 - Add sound controller to `MediaPanel`
