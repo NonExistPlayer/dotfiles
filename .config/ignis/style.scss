@@ -99,6 +99,18 @@
   }
 }
 
+.osd-window {
+  // Be careful!
+  // Applying CSS styles directly to Window
+  // can cause various graphical glitches/bugs.
+  background-color: transparent;
+
+  .osd {
+    padding: 10px;
+    border-radius: 20px;
+  }
+}
+
 // Toggle buttons
 button:checked {
   background-color: var(--accent-bg-color);

@@ -11,6 +11,7 @@ from widgets.launcher import Launcher
 from widgets.tray import SystemTray
 from widgets.status import StatusBar
 from widgets.controls import ControlCenter
+from widgets.osd import OnScreenDisplay
 
 gi.require_version("Adw", "1")
 from gi.repository import Adw  # noqa: E402
@@ -111,3 +112,4 @@ class Bar(Window):
 # Starting
 shell_bar = Bar()
 ControlCenter()
+OnScreenDisplay()

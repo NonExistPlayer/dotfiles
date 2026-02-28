@@ -18,3 +18,6 @@ class Options(OptionsManager):
     class Clock(OptionsGroup):
         showseconds: bool = False
         format: str = "%H:%M" + (":%S" if showseconds else "")
+
+    class OnScreenDisplay(OptionsGroup):
+        popuptimeout: int = 3000
