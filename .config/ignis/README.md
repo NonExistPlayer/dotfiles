@@ -63,3 +63,46 @@ To run the shell, type in the console (or in your Hyprland configuration) `ignis
 All styles are located in the `style.scss` file. You can style it **however you like**.
 
 To find out what CSS classes a widget has, open the GTK inspector with the command `ignis inspector`.
+
+## FAQ / Troubleshooting
+
+### Q: "Why Ignis specifically?"
+
+The main reason for using Ignis is GTK 4 (for libadwaita).
+For a more detailed comparison, see [this issue](https://github.com/ignis-sh/ignis/issues/58) from the Ignis repository.
+
+### Q: "Why is AI being used?"
+
+GitHub Copilot is used for the shell to: simplify tasks, assist in development/explanations,
+code review, documentation translation (across the repository), etc.
+
+**No vibe-coding whatsoever!**
+
+### I: "Ignis or the control center is not displayed"
+
+Run Ignis from the console to view the log: `ignis init`,
+after closing Ignis with the command `ignis quit` (even if it's not displayed).
+
+Then check the output. An error should be displayed.
+Report the error by opening an [issue](https://github.com/NonExistPlayer/dotfiles/issues/new/choose).
+**Make sure the error is not related to your changes or environment.**
+
+### I: "Ignis closed"
+
+> Ignis does not exit on its own. If a Python error occurs, Ignis
+> continues to run and automatically restarts when code changes.
+
+Check the Ignis log as described above.
+
+Based on my experience, it's most likely a `Segmentation fault`.
+It occurs on the C side of libraries used by Ignis (Gtk, NM).
+
+In this case, open an issue as shown above.
+
+### I: "Bluetooth error: 'Library missing'"
+
+Simply install the `gnome-bluetooth-3` library from the dependencies above.
+
+### I: `SassNotFoundError`
+
+Install one of the SASS compilers: `dart-sass` or `grass-sass`.
