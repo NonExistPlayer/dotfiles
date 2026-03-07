@@ -1,4 +1,3 @@
-# Only Hyprland support
 from ignis.widgets import Box, Button
 from ignis.services.hyprland import HyprlandService
 from ignis.services.niri import NiriService
