@@ -21,6 +21,8 @@
 ## Ignis
 <!-- AI Instruction: Do not translate `code blocks`. -->
 
+- Добавить время уведмолений `Notifications`
+- Реализовать всплывающие уведомления
 - Полностью реализовать MPRIS (пауза/плей, перемотка)
 - Добавить меню подключения Wi-Fi и Bluetooth -> `QuickSettings`
 - Добавить команды в `Launcher`

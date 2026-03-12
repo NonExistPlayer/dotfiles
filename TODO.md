@@ -21,6 +21,8 @@
 ## Ignis
 <!-- AI Instruction: Do not translate code blocks. -->
 
+- Add time for `Notifications`
+- Implement notification popups
 - Full MPRIS implementation (pause/play, rewind)
 - Add Wi-Fi and Bluetooth connection menu -> `QuickSettings`
 - Add commands to `Launcher`
