@@ -21,11 +21,9 @@ class Workspaces(Box):
 
     def update(self, workspaces) -> None:
         def makebutton(w):
-            # noqa: START
             return Button(
                 label=str(w.id),
                 on_click=lambda x: w.switch_to(),
             )
-            # noqa: END
 
         self.child = [makebutton(w) for w in workspaces]
