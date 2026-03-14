@@ -3,5 +3,11 @@
 /// https://yalter.github.io/niri/Configuration:-Window-Rules
 
 // TODO: Zen Browser/Firefox winrules
-// TODO: Steam winrules
 // TODO: Other winrules
+
+window-rule {
+  match app-id="steam"
+  exclude title="Steam" // Exclude main window
+
+  open-floating true
+}
