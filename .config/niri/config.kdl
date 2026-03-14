@@ -10,6 +10,6 @@ workspace "games"
 
 prefer-no-csd
 
-spawn-at-startup "ignit" "init"
+spawn-at-startup "ignis" "init"
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
