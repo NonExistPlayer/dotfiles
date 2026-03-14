@@ -2,8 +2,21 @@
 /// Window Rules
 /// https://yalter.github.io/niri/Configuration:-Window-Rules
 
-// TODO: Zen Browser/Firefox winrules
 // TODO: Other winrules
+
+window-rule {
+  match app-id=r#"(zen|firefox)$"#
+
+  open-maximized true
+  open-on-workspace "browser"
+}
+
+window-rule {
+  match app-id="steam"
+
+  open-maximized true
+  open-on-workspace "games"
+}
 
 window-rule {
   match app-id="steam"
