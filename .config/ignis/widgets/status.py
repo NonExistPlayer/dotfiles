@@ -38,7 +38,7 @@ class StatusBar(Button):
                 keylayout.set_visible(False)
             else:
                 keylayout.set_label(keylayouts.bind(
-                    "current_name"), lambda k: k[0:2])
+                    "current_name", lambda k: k[0:2]))
                 keylayout.set_tooltip_text(keylayouts.bind("current_name"))
         else:
             keylayout.set_visible(False)

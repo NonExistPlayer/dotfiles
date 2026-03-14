@@ -1,0 +1,15 @@
+include "input.kdl"
+include "layout.kdl"
+include "winrules.kdl"
+include "binds.kdl"
+include "animations.kdl"
+
+workspace "browser"
+workspace "main"
+workspace "games"
+
+prefer-no-csd
+
+spawn-at-startup "ignis" "init"
+
+screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
