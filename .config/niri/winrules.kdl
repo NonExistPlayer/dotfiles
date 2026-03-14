@@ -2,15 +2,8 @@
 /// Window Rules
 /// https://yalter.github.io/niri/Configuration:-Window-Rules
 
+// TODO: Zen Browser/Firefox winrules
 // TODO: Other winrules
-
-window-rule {
-  match app-id=r#"zen$"#
-  match app-id=r#"firefox$"# 
-  match title="^Picture-in-Picture$"
-
-  open-floating true
-}
 
 window-rule {
   match app-id="steam"
