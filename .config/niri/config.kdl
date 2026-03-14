@@ -2,6 +2,7 @@ include "input.kdl"
 include "layout.kdl"
 include "winrules.kdl"
 include "binds.kdl"
+include "animations.kdl"
 
 // You can configure outputs by their name, which you can find
 // by running `niri msg outputs` while inside a niri instance.
