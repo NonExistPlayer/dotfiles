@@ -7,10 +7,13 @@ class Workspaces(Box):
     __gtype_name__ = "Workspaces"
 
     def __init__(self):
-        if HyprlandService.is_available:
-            service = HyprlandService.get_default()
-        elif NiriService.is_available:
-            service = NiriService.get_default()
+        _hyprserv = HyprlandService.get_default()
+        _niriserv = NiriService.get_default()
+
+        if _hyprserv.is_available:
+            service = _hyprserv
+        elif _niriserv.is_available:
+            service = _niriserv
         else:
             return
 
