@@ -17,7 +17,6 @@ class Workspaces(Box):
         else:
             return
 
-        # FIXME: Niri no workspaces
         service.connect("notify::workspaces", lambda s,
                         _: self.update(s.workspaces))
 
