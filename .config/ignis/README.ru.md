@@ -52,7 +52,7 @@
   Без него, Ignis будет выдавать ошибку `SassNotFoundError`.
 - **`ignis-gvc`**<br>
   [`ignis-gvc`](https://github.com/ignis-sh/ignis-gvc) используется для работы со звуком в Ignis.
-- `gnome-bluetooth-3.0` *(опицонально)*<br>
+- `gnome-bluetooth-3.0` *(опционально)*<br>
   Для работы Bluetooth, Ignis использует эту библиотеку.
   Оболочка сможет запуститься, но Bluetooth не будет работать.
 
