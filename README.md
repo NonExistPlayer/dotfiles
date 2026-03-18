@@ -17,14 +17,14 @@ This is a list of applications from the dotfiles themselves. **Not all of them a
 they are part of the shell. Recommended applications are highlighted in **bold**.
 
 - **Hyprland**<br>
-  *(or niri)*
+  *(or niri)*<br>
   Tiling Wayland compositor.
   Used in config:
   - `hyprpolkitagent`
   - `grim`
   - `wl-clipboard`
 - **niri**<br>
-  *(or Hyprland)*
+  *(or Hyprland)*<br>
   Scrolling tiling Wayland compositor.
 - **Ignis**<br>
   Framework for creating desktop shells.
