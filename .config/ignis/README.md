@@ -15,8 +15,10 @@ Huge thanks to [linkfrg](https://github.com/linkfrg) for the [framework](https:/
 
 > [!IMPORTANT]
 > The shell **does not depend** on other configurations in this repository.
-> **Except:** `../hypr/hyprland/ignis.conf`. This file is responsible for
-> configuring Hyprland for Ignis (mainly hotkeys).
+> **Except:** `../hypr/hyprland/ignis.conf` (for Hyprland) and
+> `../niri/ignis.kdl` (for niri; **optional**).<br>
+> Those files is responsible for
+> configuring compositor for Ignis (mainly hotkeys).
 
 ## Usage
 

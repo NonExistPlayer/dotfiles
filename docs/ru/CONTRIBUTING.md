@@ -12,6 +12,7 @@
 | Софт     | Документация                                       | Ссылка в репозитории                    |
 | -------- | -------------------------------------------------- | --------------------------------------- |
 | Hyprland | https://wiki.hypr.land                             | [тык](../../.config/hypr/hyprland.conf) |
+| niri     | https://niri-wm.github.io/niri/                    | [тык](../../.config/niri/config.kdl)    |
 | Kitty    | https://sw.kovidgoyal.net/kitty/conf/              | [тык](../../.config/kitty/kitty.conf)   |
 | Ignis    | https://ignis-sh.github.io/ignis/latest/index.html | [тык](../../.config/ignis/)             |
 
@@ -45,6 +46,27 @@ Hyprland конфиг разделён на конфиги поменьше дл
 # Please note something |
 # ----------------------+
 ```
+
+### niri
+Как и с Hyprland, конфигурация niri разделена на маленькие файлы.
+
+Запись заголовков, похожа на Hyprland, но не одинаковая:
+```kdl
+///
+/// Config File Title
+/// <documentation link>
+
+// just comment
+
+/// Header
+//// Smaller header
+///// Super small header
+```
+
+Конфигурация niri содержит **опциональные конфиги** — `ignis.kdl` и `local.kdl`
+Первый, это конфигурация для Ignis.
+А второе, это локальная/персональная конфигурация. Отлично подходит, для запуска
+демонов, или для персональных правок, которые не нужны в дотфайлах.
 
 ### Ignis
 
