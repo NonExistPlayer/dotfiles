@@ -12,6 +12,7 @@ Thank you for your interest in the project!
 | Software | Documentation                                      | Repository Link                    |
 | -------- | -------------------------------------------------- | ---------------------------------- |
 | Hyprland | https://wiki.hypr.land                             | [link](.config/hypr/hyprland.conf) |
+| niri     | https://niri-wm.github.io/niri/                    | [link](.config/niri/config.kdl)    |
 | Kitty    | https://sw.kovidgoyal.net/kitty/conf/              | [link](.config/kitty/kitty.conf)   |
 | Ignis    | https://ignis-sh.github.io/ignis/latest/index.html | [link](.config/ignis/)             |
 
@@ -43,6 +44,27 @@ the config has similar comments:
 # Please note something |
 # ----------------------+
 ```
+
+### niri
+Like Hyprland, niri configuration is divided into small files.
+
+Header notation is similar to Hyprland, but not identical:
+```kdl
+///
+/// Config File Title
+/// <documentation link>
+
+// just comment
+
+/// Header
+//// Smaller header
+///// Super small header
+```
+
+niri configuration contains **optional configs** — `ignis.kdl` and `local.kdl`.
+The first is the configuration for Ignis.
+The second is a local/personal configuration. It's great for running
+daemons or making personal edits that don't belong in dotfiles.
 
 ### Ignis
 
