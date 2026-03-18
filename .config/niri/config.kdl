@@ -4,8 +4,9 @@ include "winrules.kdl"
 include "binds.kdl"
 include "animations.kdl"
 
-// for this use git version of niri
+// at this moment use git version of niri
 include optional=true "ignis.kdl"
+include optional=true "local.kdl" // local configuration
 
 workspace "browser"
 workspace "main"
