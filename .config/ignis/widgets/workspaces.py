@@ -1,6 +1,6 @@
 from ignis.widgets import Box, Button
-from ignis.services.hyprland import HyprlandService
-from ignis.services.niri import NiriService
+from ignis.services.hyprland import HyprlandService, HyprlandWorkspace
+from ignis.services.niri import NiriService, NiriWorkspace
 
 
 class Workspaces(Box):
@@ -24,8 +24,14 @@ class Workspaces(Box):
 
     def update(self, workspaces) -> None:
         def makebutton(w):
+            id = None
+            if isinstance(w, HyprlandWorkspace):
+                id = w.id
+            elif isinstance(w, NiriWorkspace):
+                id = w.idx
+
             return Button(
-                label=str(w.id),
+                label=str(id),
                 on_click=lambda x: w.switch_to(),
             )
 
