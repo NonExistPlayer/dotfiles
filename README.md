@@ -17,11 +17,15 @@ This is a list of applications from the dotfiles themselves. **Not all of them a
 they are part of the shell. Recommended applications are highlighted in **bold**.
 
 - **Hyprland**<br>
+  *(or niri)*
   Tiling Wayland compositor.
   Used in config:
   - `hyprpolkitagent`
   - `grim`
   - `wl-clipboard`
+- **niri**<br>
+  *(or Hyprland)*
+  Scrolling tiling Wayland compositor.
 - **Ignis**<br>
   Framework for creating desktop shells.
   **Install GIT-version**
@@ -67,7 +71,7 @@ stow .
 ```
 This will create symbolic links in `~/.config`.
 
-3. Reboot your system or (re)start Hyprland.
+3. Reboot your system or (re)start Hyprland / niri.
 
 4. Enjoy.
 
