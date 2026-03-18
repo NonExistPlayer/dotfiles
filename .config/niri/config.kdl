@@ -4,12 +4,13 @@ include "winrules.kdl"
 include "binds.kdl"
 include "animations.kdl"
 
+// for this use git version of niri
+include optional=true "ignis.kdl"
+
 workspace "browser"
 workspace "main"
 workspace "games"
 
 prefer-no-csd
-
-spawn-at-startup "ignis" "init"
 
 screenshot-path "~/Pictures/Screenshots/Screenshot from %Y-%m-%d %H-%M-%S.png"
