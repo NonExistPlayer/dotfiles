@@ -15,13 +15,15 @@
 
 > [!IMPORTANT]
 > Оболочка **не зависит** от других конфигов в этом репозитории.
-> **Кроме:** `../hypr/hyprland/ignis.conf`. Этот файл отвечает,
-> за настройку Hyprland под Ignis (в основном горячие клавиши).
+> **Кроме:** `../hypr/hyprland/ignis.conf` (для Hyprland) и
+> `../niri/ignis.kdl` (для niri; **опциональный**).<br>
+> Эти файлы отвечают, за настройку композитора под Ignis
+> (в основном горячие клавиши).
 
 ## Использование
 
 **Требования**:
-- **Hyprland** / Niri (не тестируется)<br>
+- **Hyprland** / **Niri** <br>
   > Возможно запустить на любом Wayland-композиторе
   > (с поддержкой Layer Shell protocol), но виджет
   > [workspace](./widgets/workspaces.py) зависит от Hyprland / Niri.<br>
