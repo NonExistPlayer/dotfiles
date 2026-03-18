@@ -3,10 +3,7 @@
 /// https://yalter.github.io/niri/Configuration:-Input
 input {
     keyboard {
-        xkb {
-            layout "us,ru"
-            options "grp:rwin_toggle,compose:ralt"
-        }
+        xkb {}
 
         // Enable numlock on startup, omitting this setting disables it.
         // numlock
