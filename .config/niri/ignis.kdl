@@ -1,5 +1,5 @@
 spawn-at-startup "ignis" "init"
 
 binds {
-  Mod+N { spawn "ignis" "toggle-window" "shell-control-center"; }
+    Mod+N hotkey-overlay-title="Ignis: Toggle control center" { spawn "ignis" "toggle-window" "shell-control-center"; }
 }
