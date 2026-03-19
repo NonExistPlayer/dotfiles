@@ -163,8 +163,8 @@ binds {
     Mod+W { toggle-column-tabbed-display; }
 
     Print { screenshot; }
-    Ctrl+Print { screenshot-screen; }
-    Alt+Print { screenshot-window; }
+    Ctrl+Print hotkey-overlay-title="Screenshot a screen" { screenshot-screen; }
+    Alt+Print hotkey-overlay-title="Screenshot a window" { screenshot-window; }
 
     // The quit action will show a confirmation dialog to avoid accidental exits.
     Mod+Shift+E { quit; }
