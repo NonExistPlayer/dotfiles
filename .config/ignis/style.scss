@@ -14,6 +14,17 @@
   to { transform: rotate(360deg); }
 }
 
+@keyframes swing {
+  0%, 100% {
+    transform: rotate(-15deg);
+    transform-origin: top center;
+  }
+  50% {
+    transform: rotate(15deg);
+    transform-origin: top center;
+  }
+}
+
 .workspaces {
   padding: 4px;
   button {
@@ -94,6 +105,11 @@
     .reboot .confirm {
       color: var(--success-color);
       animation-name: rotate;
+      animation-timing-function: ease-in-out;
+    }
+    .suspend .confirm {
+      color: var(--accent-blue);
+      animation-name: swing;
       animation-timing-function: ease-in-out;
     }
   }

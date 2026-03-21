@@ -53,10 +53,17 @@ class ActionBar(CenterBox):
             on_confirmed=lambda: utils.exec_sh("reboot"),
             tooltip_text="Reboot",
         )
+        suspend_button = ConfirmButton(
+            css_classes=["suspend", "circular"],
+            icon_name="weather-clear-night-symbolic",
+            on_confirmed=lambda: utils.exec_sh("systemctl suspend"),
+            tooltip_text="Suspend",
+        )
         power_box = Box(
             halign="end",
             spacing=5,
             child=[
+                suspend_button,
                 power_button,
                 reboot_button,
             ],
