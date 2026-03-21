@@ -80,6 +80,16 @@ code review, documentation translation (across the repository), etc.
 
 **No vibe-coding whatsoever!**
 
+### Q: "How to shutdown/reboot/suspend computer?"
+
+Open control center in the shell, you will see three buttons.
+To take action, press two times on a button, with the small delay.
+This is done to protect against accidental clicks.
+
+> Suspend button, depend on `systemctl`.
+> If you are not using systemd, then edit
+> the command in shell settings.
+
 ### I: "Ignis or the control center is not displayed"
 
 Run Ignis from the console to view the log: `ignis init`,
