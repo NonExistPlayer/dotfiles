@@ -15,6 +15,12 @@ class Options(OptionsManager):
             type: str = "SLIDE_LEFT"
             duration: int = 100
 
+    class ControlCenter(OptionsGroup):
+        class PowerButtons(OptionsGroup):
+            shutdown_cmd: str = "shutdown now"
+            reboot_cmd: str = "reboot"
+            suspend_cmd: str = "systemctl suspend"
+
     class Clock(OptionsGroup):
         showseconds: bool = False
         format: str = "%H:%M" + (":%S" if showseconds else "")

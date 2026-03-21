@@ -2,6 +2,8 @@ from ignis import utils
 from ignis.options import options
 from ignis.widgets import Box, CenterBox, Button, ToggleButton
 
+from options import Options
+
 from .cbutton import ConfirmButton
 
 
@@ -44,19 +46,25 @@ class ActionBar(CenterBox):
         power_button = ConfirmButton(
             css_classes=["shutdown", "circular"],
             icon_name="system-shutdown-symbolic",
-            on_confirmed=lambda: utils.exec_sh("shutdown now"),
+            on_confirmed=lambda: utils.exec_sh(
+                Options.ControlCenter.PowerButtons.shutdown_cmd
+            ),
             tooltip_text="Shutdown",
         )
         reboot_button = ConfirmButton(
             css_classes=["reboot", "circular"],
             icon_name="system-reboot-symbolic",
-            on_confirmed=lambda: utils.exec_sh("reboot"),
+            on_confirmed=lambda: utils.exec_sh(
+                Options.ControlCenter.PowerButtons.reboot_cmd
+            ),
             tooltip_text="Reboot",
         )
         suspend_button = ConfirmButton(
             css_classes=["suspend", "circular"],
             icon_name="weather-clear-night-symbolic",
-            on_confirmed=lambda: utils.exec_sh("systemctl suspend"),
+            on_confirmed=lambda: utils.exec_sh(
+                Options.ControlCenter.PowerButtons.suspend_cmd
+            ),
             tooltip_text="Suspend",
         )
         power_box = Box(
