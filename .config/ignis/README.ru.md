@@ -23,10 +23,10 @@
 ## Использование
 
 **Требования**:
-- **Hyprland** / **Niri** <br>
+- **Hyprland** / **niri** <br>
   > Возможно запустить на любом Wayland-композиторе
   > (с поддержкой Layer Shell protocol), но виджет
-  > [workspace](./widgets/workspaces.py) зависит от Hyprland / Niri.<br>
+  > [workspace](./widgets/workspaces.py) зависит от Hyprland / niri.<br>
   > В таком случае, виджет не появиться.
 - **Ignis**<br>
   На данный момент Ignis не выпускает обновлений, из-за чего
