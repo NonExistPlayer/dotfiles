@@ -22,6 +22,13 @@
     packages = with pkgs; [];
   };
 
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+
+    users.nonex = import ../home/nonex.nix;
+  };
+
   programs.neovim = {
     enable = true;
     defaultEditor = true;
