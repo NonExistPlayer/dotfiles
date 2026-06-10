@@ -19,7 +19,7 @@
          specialArgs = { inherit inputs; };
          modules = [
 	   ./hosts/laptop
-	   ./modules
+	   ./modules/system
 	   inputs.home-manager.nixosModules.home-manager
          ];
        };
