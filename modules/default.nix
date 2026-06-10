@@ -22,11 +22,15 @@
     packages = with pkgs; [];
   };
 
+  programs.neovim = {
+    enable = true;
+    defaultEditor = true;
+  };
+
   environment.systemPackages = with pkgs;
   let
     zen = inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default;
   in [
-    neovim
     zellij
     ranger
     wget
