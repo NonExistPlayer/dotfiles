@@ -1,4 +1,4 @@
-{ lib, pkgs, ... }:
+{ lib, pkgs, inputs, ... }:
 
 {
   # You can disable specific modules here:
@@ -22,9 +22,14 @@
     packages = with pkgs; [];
   };
 
-  environment.systemPackages = with pkgs; [
+  environment.systemPackages = with pkgs;
+  let
+    zen = inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default;
+  in [
     neovim
     wget
     git
+
+    zen
   ];
 }
