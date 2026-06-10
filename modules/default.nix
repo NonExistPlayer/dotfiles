@@ -1,6 +1,12 @@
 { lib, pkgs, ... }:
 
 {
+  # You can disable specific modules here:
+  imports =
+    [
+      ./niri
+    ];
+
   services.pipewire = {
     enable = true;
     pulse.enable = true;
