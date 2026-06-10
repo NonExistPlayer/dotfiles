@@ -27,6 +27,8 @@
     zen = inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default;
   in [
     neovim
+    zellij
+    ranger
     wget
     git
 
