@@ -6,7 +6,6 @@
     zen = inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default;
   in [
     zellij
-    ranger
 
     wget
     git
