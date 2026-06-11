@@ -4,7 +4,6 @@
   imports =
     [
       ./packages.nix
-      ./neovim.nix
     ];
 
   services.pipewire = {
