@@ -11,6 +11,7 @@
 
     wget
     git
+    unzip
 
     zen
   ];
