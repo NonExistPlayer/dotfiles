@@ -3,9 +3,8 @@
   programs.neovim = {
     enable = true;
     defaultEditor = true;
+    extraPackages = with pkgs; [
+      lua-language-server
+    ];
   };
-
-  home.packages = with pkgs; [
-    lua-language-server
-  ];
 }
