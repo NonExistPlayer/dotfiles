@@ -1,12 +1,22 @@
-{ pkgs, ... }:
+{ pkgs, config, ... }:
+
+let
+  dotfilesPath = "${config.home.homeDirectory}/.dotfiles";
+  localPath = "${dotfilesPath}/config/nvim";
+in
 {
-  programs.neovim = {
-    enable = true;
-    defaultEditor = true;
-    extraPackages = with pkgs; [
-      lua-language-server
-      pyright
-      nixd
-    ];
+  home.packages = with pkgs; [
+    neovim
+
+    lua-language-server
+    pyright
+    nixd
+  ];
+
+  home.sessionVariables = {
+    EDITOR = "nvim";
+    VISUAL = "nvim";
   };
+
+  xdg.configFile."nvim".source = config.lib.file.mkOutOfStoreSymlink localPath;
 }
