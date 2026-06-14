@@ -8,16 +8,25 @@
       ./hardware-configuration.nix
     ];
 
-  boot = {
-    loader.systemd-boot.enable = true;
-    loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi = {
+      canTouchEfiVariables = true;
+      efiSysMountPoint = "/boot";
+    };
 
-    kernelPackages = pkgs.linuxPackages_latest;
+    grub = {
+      enable = true;
+      devices = [ "nodev" ];
+      efiSupport = true;
+      useOSProber = true;
+    };
   };
+  boot.kernelPackages = pkgs.linuxPackages_latest;
 
   networking.hostName = "nnxlaptop";
 
   time.timeZone = "Europe/Moscow";
+  time.hardwareClockInLocalTime = true;
 
   i18n.defaultLocale = "en_US.UTF-8";
 
