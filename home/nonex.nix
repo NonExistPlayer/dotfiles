@@ -1,4 +1,4 @@
-{ ... }:
+{ pkgs, ... }:
 
 {
   imports =
@@ -8,6 +8,8 @@
 
   home.username = "nonex";
   home.homeDirectory = "/home/nonex";
+
+  home.packages = with pkgs; [ kdePackages.kdenlive ];
 
   programs.git = {
     enable = true;
