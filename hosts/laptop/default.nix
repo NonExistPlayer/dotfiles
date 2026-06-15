@@ -1,6 +1,6 @@
 # Configuration for my laptop
 
-{ config, lib, pkgs, inputs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports =
@@ -32,8 +32,7 @@
 
   users.users.nonex = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ]; # Enable ‘sudo’ for the user.
-    packages = with pkgs; [];
+    extraGroups = [ "wheel" ];
   };
 
   home-manager = {
