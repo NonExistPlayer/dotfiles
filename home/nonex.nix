@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, inputs, ... }:
 
 {
   imports =
@@ -9,7 +9,15 @@
   home.username = "nonex";
   home.homeDirectory = "/home/nonex";
 
-  home.packages = with pkgs; [ kdePackages.kdenlive ];
+  # My packages that I need but not belong to my dotfiles/ricing
+  home.packages =
+  let
+    zen = inputs.zen-browser.packages.${pkgs.system}.default;
+  in
+  with pkgs; [
+    zen
+    kdePackages.kdenlive
+  ];
 
   programs.git = {
     enable = true;

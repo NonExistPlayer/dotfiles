@@ -1,6 +1,6 @@
 # Configuration for my laptop
 
-{ config, lib, pkgs, ... }:
+{ config, lib, pkgs, inputs, ... }:
 
 {
   imports =
@@ -40,6 +40,9 @@
     useGlobalPkgs = true;
     useUserPackages = true;
 
+    extraSpecialArgs = {
+      inherit inputs;
+    };
     users.nonex = import ../../home/nonex.nix;
   };
 
