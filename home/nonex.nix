@@ -9,6 +9,8 @@
   home.username = "nonex";
   home.homeDirectory = "/home/nonex";
 
+  nixpkgs.config.allowUnfree = true;
+
   # My packages that I need but not belong to my dotfiles/ricing
   home.packages =
   let
@@ -19,6 +21,8 @@
     vlc
     kdePackages.kdenlive
   ];
+
+  programs.obsidian.enable = true;
 
   programs.git = {
     enable = true;
