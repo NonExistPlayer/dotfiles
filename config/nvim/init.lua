@@ -1,3 +1,6 @@
+vim.wo.number = true;
+vim.wo.relativenumber = true;
+
 require("keymaps")
 require("plugins")
 
