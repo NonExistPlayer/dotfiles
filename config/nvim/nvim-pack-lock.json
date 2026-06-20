@@ -8,6 +8,10 @@
       "rev": "2038c666bd9d8a0b7349a0b6ee00dc83104b9ecf",
       "src": "https://github.com/lewis6991/gitsigns.nvim"
     },
+    "markview.nvim": {
+      "rev": "301e431c7b618235f5447d54465c70934bd33668",
+      "src": "https://github.com/OXY2DEV/markview.nvim"
+    },
     "neo-tree.nvim": {
       "rev": "83e7a2982fd12b9c3d35bc39dd5877cd91a02a61",
       "src": "https://github.com/nvim-neo-tree/neo-tree.nvim",
