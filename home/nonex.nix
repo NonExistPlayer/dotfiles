@@ -11,6 +11,8 @@
 
   nixpkgs.config.allowUnfree = true;
 
+  services.syncthing.enable = true;
+
   # My packages that I need but not belong to my dotfiles/ricing
   home.packages =
   let
