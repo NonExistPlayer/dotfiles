@@ -32,7 +32,7 @@
 
   users.users.nonex = {
     isNormalUser = true;
-    extraGroups = [ "wheel" ];
+    extraGroups = [ "wheel" "docker" ];
   };
 
   home-manager = {

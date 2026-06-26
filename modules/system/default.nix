@@ -11,6 +11,8 @@
     pulse.enable = true;
   };
 
+  virtualisation.docker.enable = true;
+
   services.libinput.enable = true;
 
   networking.networkmanager.enable = true;
