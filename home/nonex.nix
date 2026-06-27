@@ -19,6 +19,7 @@
     zen = inputs.zen-browser.packages.${pkgs.system}.default;
   in
   with pkgs; [
+    telegram-desktop
     zen
     vlc
     kdePackages.kdenlive
