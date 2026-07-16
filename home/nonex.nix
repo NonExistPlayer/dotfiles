@@ -23,6 +23,7 @@
     zen
     vlc
     kdePackages.kdenlive
+    antigravity-cli
   ];
 
   programs.obsidian.enable = true;
