@@ -1,0 +1,5 @@
+spawn-at-startup "vicinae" "server"
+
+binds {
+    Mod+Space hotkey-overlay-title="Open Vicinae" repeat=false { spawn "vicinae" "toggle"; }
+}
