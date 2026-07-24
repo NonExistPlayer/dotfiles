@@ -32,4 +32,9 @@
   hardware.graphics.extraPackages = with pkgs; [ intel-media-driver ];
 
   environment.systemPackages = with pkgs; [ brightnessctl ];
+
+  hardware.opengl = {
+    enable = true;
+    driSupport32Bit = true;
+  };
 }
