@@ -11,6 +11,9 @@
     pulse.enable = true;
   };
 
+  security.polkit.enable = true;
+  security.polkit.enablePkexecWrapper = true;
+
   virtualisation.docker.enable = true;
 
   services.libinput.enable = true;
