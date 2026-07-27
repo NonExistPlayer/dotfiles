@@ -11,6 +11,11 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    happ = {
+      url = "github:NonExistPlayer/happ.nix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
   outputs = inputs@{ self, nixpkgs, ... }: {
     nixosConfigurations.laptop =
@@ -21,6 +26,7 @@
 	   ./hosts/laptop
 	   ./modules/system
 	   inputs.home-manager.nixosModules.home-manager
+	   inputs.happ.nixosModules.default
          ];
        };
     nixosConfigurations.pc =
@@ -31,6 +37,7 @@
 	   ./hosts/pc
 	   ./modules/system
 	   inputs.home-manager.nixosModules.home-manager
+	   inputs.happ.nixosModules.default
          ];
        };
   };

@@ -14,6 +14,9 @@
   security.polkit.enable = true;
   security.polkit.enablePkexecWrapper = true;
 
+  nixpkgs.config.allowUnfree = true;
+  services.happ.enable = true;
+
   virtualisation.docker.enable = true;
 
   services.libinput.enable = true;
