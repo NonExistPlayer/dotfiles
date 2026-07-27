@@ -3,6 +3,7 @@
 {
   imports =
     [
+      ./btrfs.nix
     ];
 
   hardware.bluetooth.enable = false;
