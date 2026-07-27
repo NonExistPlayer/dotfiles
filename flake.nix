@@ -23,5 +23,15 @@
 	   inputs.home-manager.nixosModules.home-manager
          ];
        };
+    nixosConfigurations.pc =
+       nixpkgs.lib.nixosSystem {
+         system = "x86_64-linux";
+         specialArgs = { inherit inputs; };
+         modules = [
+	   ./hosts/pc
+	   ./modules/system
+	   inputs.home-manager.nixosModules.home-manager
+         ];
+       };
   };
 }
