@@ -5,6 +5,7 @@
 
   home.packages = with pkgs; [
     xwayland-satellite
+    polkit_gnome
 
     adwaita-icon-theme
     nautilus
