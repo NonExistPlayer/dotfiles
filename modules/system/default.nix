@@ -11,6 +11,8 @@
     pulse.enable = true;
   };
 
+  services.gvfs.enable = true;
+
   security.polkit.enable = true;
   security.polkit.enablePkexecWrapper = true;
 
