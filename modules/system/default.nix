@@ -16,6 +16,8 @@
   xdg.portal.enable = true;
   xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
 
+  services.gnome.gnome-keyring.enable = true;
+
   security.polkit.enable = true;
   security.polkit.enablePkexecWrapper = true;
 
