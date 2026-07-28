@@ -25,6 +25,7 @@
          modules = [
 	   ./hosts/laptop
 	   ./modules/system
+	   ./modules/system/happ.nix
 	   inputs.home-manager.nixosModules.home-manager
 	   inputs.happ.nixosModules.default
          ];
@@ -36,6 +37,7 @@
          modules = [
 	   ./hosts/pc
 	   ./modules/system
+	   ./modules/system/happ.nix
 	   inputs.home-manager.nixosModules.home-manager
 	   inputs.happ.nixosModules.default
          ];
