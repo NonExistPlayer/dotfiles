@@ -13,6 +13,9 @@
 
   services.gvfs.enable = true;
 
+  xdg.portal.enable = true;
+  xdg.portal.extraPortals = [ pkgs.xdg-desktop-portal-gtk ];
+
   security.polkit.enable = true;
   security.polkit.enablePkexecWrapper = true;
 
