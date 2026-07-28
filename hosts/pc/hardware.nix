@@ -9,6 +9,7 @@
   hardware.bluetooth.enable = false;
 
   hardware.graphics.enable = true;
+  hardware.opengl.enable32Bit = true; 
   hardware.nvidia = {
     open = false;
     modesetting.enable = true;
