@@ -5,8 +5,6 @@
 
   environment.systemPackages = with pkgs;
   [
-    zellij
-
     wget
     git
     unzip
