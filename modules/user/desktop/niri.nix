@@ -3,19 +3,8 @@
 {
   xdg.configFile."niri".source = ../../../config/niri;
 
-  home.packages = with pkgs; [
-    xwayland-satellite
-    polkit_gnome
+  home.packages = with pkgs; [ xwayland-satellite ];
 
-    adwaita-icon-theme
-    nautilus
-    gnome-calendar
-    amberol
-    baobab
-    loupe
-  ];
-
-  programs.vicinae.enable = true;
   home.pointerCursor = {
     enable = true;
     gtk.enable = true;
