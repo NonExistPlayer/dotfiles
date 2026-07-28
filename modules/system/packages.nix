@@ -7,8 +7,6 @@
   [
     zellij
 
-    distrobox
-
     wget
     git
     unzip
