@@ -6,8 +6,9 @@
       ./btrfs.nix
     ];
 
-  hardware.bluetooth.enable = false;
+  hardware.bluetooth.enable = true;
 
+  hardware.enableAllFirmware = true;
   hardware.graphics.enable = true;
   hardware.graphics.enable32Bit = true; 
   hardware.nvidia = {
