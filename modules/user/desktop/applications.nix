@@ -8,6 +8,7 @@
 
     adwaita-icon-theme
     nautilus
+    file-roller
     gnome-calendar
     amberol
     baobab
