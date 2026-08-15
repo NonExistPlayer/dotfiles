@@ -23,7 +23,6 @@
     zen
     vlc
     kdePackages.kdenlive
-    antigravity-cli
     steam
   ];
 
