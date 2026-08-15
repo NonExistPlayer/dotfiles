@@ -24,6 +24,7 @@
     vlc
     kdePackages.kdenlive
     steam
+    srb2
   ];
 
   nixpkgs.overlays = [
