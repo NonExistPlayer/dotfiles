@@ -47,3 +47,10 @@ window-rule {
 
   open-floating true
 }
+
+window-rule {
+  match app-id="org.telegram.desktop"
+  
+  open-maximized true
+  open-on-workspace "chat"
+}

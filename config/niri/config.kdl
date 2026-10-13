@@ -12,6 +12,7 @@ include optional=true "local.kdl" // local configuration
 workspace "browser"
 workspace "main"
 workspace "games"
+workspace "chat"
 
 prefer-no-csd
 
