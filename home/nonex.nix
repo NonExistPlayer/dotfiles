@@ -38,6 +38,45 @@ in
     ];
   };
 
+  xdg.configFile."niri/personal.kdl".text = ''
+    input {
+      keyboard {
+	xkb {
+	    layout "us,ru"
+	    options "grp:caps_toggle,compose:ralt"
+	}
+      }
+    }
+
+    window-rule {
+      match app-id=r#"(zen|firefox)$"#
+
+      open-maximized true
+      open-on-workspace "browser"
+    }
+
+    window-rule {
+      match app-id="steam"
+
+      open-maximized true
+      open-on-workspace "games"
+    }
+
+    window-rule {
+      match app-id="steam"
+      exclude title="Steam"
+
+      open-floating true
+    }
+
+    window-rule {
+      match app-id="org.telegram.desktop"
+      
+      open-maximized true
+      open-on-workspace "chat"
+    }
+  '';
+
   nixpkgs.overlays = [
     (final: prev: {
       steam = prev.steam.override {

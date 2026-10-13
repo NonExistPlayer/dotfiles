@@ -1,7 +1,15 @@
 { pkgs, ... }:
 
 {
-  xdg.configFile."niri".source = ../../../config/niri;
+  xdg.configFile = {
+    "niri/config.kdl".source = ../../../config/niri/config.kdl;
+    "niri/animations.kdl".source = ../../../config/niri/animations.kdl;
+    "niri/binds.kdl".source = ../../../config/niri/binds.kdl;
+    "niri/input.kdl".source = ../../../config/niri/input.kdl;
+    "niri/layout.kdl".source = ../../../config/niri/layout.kdl;
+    "niri/vicinae.kdl".source = ../../../config/niri/vicinae.kdl;
+    "niri/winrules.kdl".source = ../../../config/niri/winrules.kdl;
+  };
 
   home.packages = with pkgs; [ xwayland-satellite ];
 
