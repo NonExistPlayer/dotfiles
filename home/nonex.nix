@@ -1,5 +1,9 @@
 { pkgs, inputs, ... }:
 
+let
+  zen = inputs.zen-browser.packages.${pkgs.system}.default;
+  happ = pkgs.callPackage "${inputs.happ}/happ.nix" {};
+in
 {
   imports =
     [
@@ -14,11 +18,7 @@
   services.syncthing.enable = true;
 
   # My packages that I need but not belong to my dotfiles/ricing
-  home.packages =
-  let
-    zen = inputs.zen-browser.packages.${pkgs.system}.default;
-  in
-  with pkgs; [
+  home.packages = with pkgs; [
     telegram-desktop
     zen
     vlc
@@ -26,6 +26,17 @@
     steam
     srb2
   ];
+
+  xdg.autostart = {
+    enable = true;
+    entries = 
+    [
+      "${zen}/share/applications/zen.desktop"
+      "${pkgs.telegram-desktop}/share/applications/org.telegram.desktop.desktop"
+      "${pkgs.steam}/share/applications/steam.desktop"
+      "${happ}/share/applications/Happ.desktop"
+    ];
+  };
 
   nixpkgs.overlays = [
     (final: prev: {
