@@ -12,6 +12,17 @@
       modules-left = [ "niri/workspaces" ];
       modules-center = [ "niri/window" ];
       modules-right = [ "battery" "niri/language" "clock" ];
+
+      "niri/workspaces" = {
+	format = "{icon}";
+	format-icons =
+	{
+	  "browser" = "";
+	  "main" = "";
+	  "games" = "";
+	  "chat" = "";
+	};
+      };
     };
   };
 }
