@@ -10,6 +10,7 @@
     ];
 
   services.libinput.enable = true;
+  services.openssh.enable = true;
 
   networking.networkmanager.enable = true;
 
