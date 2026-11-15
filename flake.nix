@@ -16,6 +16,8 @@
       url = "github:NonExistPlayer/happ.nix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    spyland.url = "github:spyland-dev/spyland";
   };
   outputs = inputs@{ self, nixpkgs, ... }: {
     nixosConfigurations.laptop =
@@ -28,6 +30,7 @@
 	   ./modules/system/happ.nix
 	   inputs.home-manager.nixosModules.home-manager
 	   inputs.happ.nixosModules.default
+	   inputs.spyland.nixosModules.default
          ];
        };
     nixosConfigurations.pc =
@@ -40,6 +43,7 @@
 	   ./modules/system/happ.nix
 	   inputs.home-manager.nixosModules.home-manager
 	   inputs.happ.nixosModules.default
+	   inputs.spyland.nixosModules.default
          ];
        };
   };

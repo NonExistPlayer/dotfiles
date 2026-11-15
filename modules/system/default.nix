@@ -7,6 +7,7 @@
       ./packages.nix
       ./pipewire.nix
       ./polkit.nix
+      ./spyland.nix
     ];
 
   services.libinput.enable = true;

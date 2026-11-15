@@ -1,5 +1,20 @@
 {
   "nodes": {
+    "crane": {
+      "locked": {
+        "lastModified": 1793836618,
+        "narHash": "sha256-TREenflwEjxOSq292FYwbc3kEm7TDRtXCZRNWEdjBmg=",
+        "owner": "ipetkov",
+        "repo": "crane",
+        "rev": "79fd63528501446749c09f08cad486a58c7d173e",
+        "type": "github"
+      },
+      "original": {
+        "owner": "ipetkov",
+        "repo": "crane",
+        "type": "github"
+      }
+    },
     "happ": {
       "inputs": {
         "nixpkgs": [
@@ -56,12 +71,48 @@
         "type": "github"
       }
     },
+    "nixpkgs_2": {
+      "locked": {
+        "lastModified": 1781577229,
+        "narHash": "sha256-lrp67w8AulE9Ks53n27I45ADSzbOCn4H+CNW1Ck8B+8=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "567a49d1913ce81ac6e9582e3553dd90a955875f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "nixos-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "root": {
       "inputs": {
         "happ": "happ",
         "home-manager": "home-manager",
         "nixpkgs": "nixpkgs",
+        "spyland": "spyland",
         "zen-browser": "zen-browser"
+      }
+    },
+    "spyland": {
+      "inputs": {
+        "crane": "crane",
+        "nixpkgs": "nixpkgs_2"
+      },
+      "locked": {
+        "lastModified": 1794680826,
+        "narHash": "sha256-BU+atzHk5GXHsOgAyjn6ufv9BQcOdJWJ8h9Q3ZMzRD4=",
+        "owner": "spyland-dev",
+        "repo": "spyland",
+        "rev": "af6be0c57bd937611419bcacd53b32460b98a46a",
+        "type": "github"
+      },
+      "original": {
+        "owner": "spyland-dev",
+        "repo": "spyland",
+        "type": "github"
       }
     },
     "zen-browser": {
